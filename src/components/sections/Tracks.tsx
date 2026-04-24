@@ -60,12 +60,11 @@ export default function Tracks() {
           {tracks.map((track, i) => (
             <motion.div
               key={track.id}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ scale: 1.02, translateY: -10 }}
-              className="glass-card group relative p-8 h-[400px] flex flex-col justify-between overflow-hidden transition-all duration-300"
+              transition={{ duration: 0.8, delay: i * 0.15, ease: [0.2, 0.65, 0.3, 0.9] }}
+              className="glass-card group relative p-8 h-[400px] flex flex-col justify-between overflow-hidden"
               style={{"--hover-color": track.color} as React.CSSProperties}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--hover-color)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

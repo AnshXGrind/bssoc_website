@@ -32,33 +32,34 @@ export default function CustomCursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 bg-orange-500 rounded-full mix-blend-screen pointer-events-none z-50 flex items-center justify-center"
+        className="fixed top-0 left-0 w-3 h-3 bg-[#FF4D00] rounded-full mix-blend-screen pointer-events-none z-[100] flex items-center justify-center shadow-[0_0_10px_#FF4D00]"
         animate={{
-          x: position.x - 8,
-          y: position.y - 8,
-          scale: isHovered ? 2.5 : 1,
-          backgroundColor: isHovered ? "#FF4D00" : "#ffffff",
+          x: position.x - 6,
+          y: position.y - 6,
+          scale: isHovered ? 3 : 1,
+          backgroundColor: isHovered ? "#transparent" : "#FF4D00",
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 28,
+          mass: 0.1,
+        }}
+      />
+      <motion.div
+        className="fixed top-0 left-0 w-10 h-10 border-2 border-[#FF4D00]/50 rounded-full pointer-events-none z-[100]"
+        animate={{
+          x: position.x - 20,
+          y: position.y - 20,
+          scale: isHovered ? 1.8 : 1,
+          opacity: isHovered ? 1 : 0.5,
+          boxShadow: isHovered ? "0 0 20px rgba(255, 77, 0, 0.4)" : "none",
         }}
         transition={{
           type: "spring",
           stiffness: 150,
-          damping: 15,
-          mass: 0.5,
-        }}
-      />
-      <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border border-white/30 rounded-full pointer-events-none z-50"
-        animate={{
-          x: position.x - 20,
-          y: position.y - 20,
-          scale: isHovered ? 1.5 : 1,
-          opacity: isHovered ? 0 : 1,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 100,
           damping: 20,
-          mass: 1,
+          mass: 0.8,
         }}
       />
     </>

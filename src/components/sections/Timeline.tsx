@@ -42,7 +42,7 @@ export default function Timeline() {
                   <div className="w-1.5 h-1.5 bg-accent-blue rounded-full shadow-[0_0_10px_#00E5FF]" />
                </div>
 
-               <div className={`w-full md:w-[45%] glass-card p-8 group hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+               <div className={`w-full md:w-[45%] glass-card p-8 group relative overflow-hidden ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                   <div className="text-accent/30 font-mono text-xl md:text-3xl font-bold mb-2 uppercase group-hover:text-accent transition-colors duration-300">{phase.id}.</div>
                   <h3 className="text-2xl md:text-3xl font-black uppercase tracking-wide mb-2 text-white group-hover:text-accent-blue transition-colors duration-300">{phase.title}</h3>
                   <div className="text-xs font-mono tracking-widest uppercase bg-white/5 inline-block px-3 py-1 rounded-full mb-4 text-white/50">{phase.date}</div>
