@@ -5,6 +5,7 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 import CustomCursor from "@/components/layout/CustomCursor";
 import LoadingScreen from "@/components/layout/LoadingScreen";
 import ScrollProgress from "@/components/layout/ScrollProgress";
+import Navbar from "@/components/layout/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,23 +35,24 @@ export default function RootLayout({
       <body>
         <LoadingScreen />
         <ScrollProgress />
+        <Navbar />
+        
+        {/* Sticky Logo */}
+        <div className="fixed top-6 left-6 md:top-8 md:left-8 z-[100] pointer-events-none mix-blend-difference">
+          <a href="/" className="pointer-events-auto inline-block">
+            <span className="text-2xl md:text-3xl font-black tracking-tighter text-white uppercase" style={{ fontFamily: 'var(--font-geist-sans)' }}>
+              BSSOC
+            </span>
+          </a>
+        </div>
+
+        {/* Global Background Effects - Optimized */}
+        <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-[#0A0A0A]">
+          <div className="absolute inset-0 opacity-[0.03] noise-overlay" />
+        </div>
+
         <SmoothScroll>
           <CustomCursor />
-          
-          {/* Sticky Logo */}
-          <div className="fixed top-6 left-6 md:top-8 md:left-8 z-50 pointer-events-none mix-blend-difference">
-            <a href="/" className="pointer-events-auto inline-block">
-              <span className="text-2xl md:text-3xl font-black tracking-tighter text-white uppercase" style={{ fontFamily: 'var(--font-geist-sans)' }}>
-                BSSOC
-              </span>
-            </a>
-          </div>
-
-          {/* Global Background Effects - Optimized */}
-          <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-[#0A0A0A]">
-            <div className="absolute inset-0 opacity-[0.03] noise-overlay" />
-          </div>
-
           {children}
         </SmoothScroll>
       </body>

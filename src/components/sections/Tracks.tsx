@@ -39,7 +39,7 @@ export default function Tracks() {
   const containerRef = useRef<HTMLDivElement>(null)
   
   return (
-    <section ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#0A0A0A] relative z-10">
+    <section id="tracks" ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#0A0A0A] relative z-10">
       <div className="max-w-7xl mx-auto relative z-20">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

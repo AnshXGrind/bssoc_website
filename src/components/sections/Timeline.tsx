@@ -15,7 +15,7 @@ export default function Timeline() {
   const containerRef = useRef<HTMLDivElement>(null)
   
   return (
-    <section ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#050505] relative border-t border-accent/20">
+    <section id="timeline" ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#050505] relative border-t border-accent/20">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-24 text-center">
           How It <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Works</span>

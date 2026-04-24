@@ -9,7 +9,7 @@ export default function CTA() {
   const containerRef = useRef<HTMLDivElement>(null)
   
   return (
-    <section ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#0A0A0A] relative z-10 overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
+    <section id="join" ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#0A0A0A] relative z-10 overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/20 via-[#0A0A0A] to-[#0A0A0A]" />
       
       <div className="max-w-4xl mx-auto relative z-20 text-center">
