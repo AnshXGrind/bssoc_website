@@ -1,9 +1,5 @@
-import CTA from "@/components/sections/CTA";
+import { redirect } from "next/navigation";
 
 export default function ApplyPage() {
-  return (
-    <main className="pt-28 md:pt-32 max-w-full overflow-hidden">
-      <CTA />
-    </main>
-  );
+  redirect("/how-to-join");
 }

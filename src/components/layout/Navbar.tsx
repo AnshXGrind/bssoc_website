@@ -6,10 +6,9 @@ import { useMemo, useState } from "react"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
-  { label: "About", href: "/about" },
-  { label: "Tracks", href: "/about#tracks" },
-  { label: "How It Works", href: "/about#how-it-works" },
-  { label: "Apply", href: "/apply" },
+  { label: "What is BSSOC", href: "/what-is-bssoc" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "How to Join", href: "/how-to-join" },
 ]
 
 export default function Navbar() {
@@ -17,7 +16,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   const activeHref = useMemo(
-    () => navItems.find((item) => pathname === item.href)?.href,
+    () => navItems.find((item) => pathname === item.href)?.href ?? "",
     [pathname]
   )
 

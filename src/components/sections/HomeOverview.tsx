@@ -3,10 +3,9 @@
 import Link from "next/link"
 
 const quickLinks = [
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Mentors", href: "/mentors" },
-  { label: "Contributors", href: "/contributors" },
+  { label: "What is BSSOC", href: "/what-is-bssoc" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "How to Join", href: "/how-to-join" },
 ]
 
 export default function HomeOverview() {
@@ -19,7 +18,7 @@ export default function HomeOverview() {
         <p className="text-white/70 font-mono text-base md:text-lg max-w-3xl leading-relaxed">
           Built for developers who are done watching and ready to ship real work.
         </p>
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-3">
           {quickLinks.map((item) => (
             <Link
               key={item.href}

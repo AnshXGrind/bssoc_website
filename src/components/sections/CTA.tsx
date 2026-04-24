@@ -30,7 +30,7 @@ export default function CTA() {
           <p className="text-white/70 font-mono text-base md:text-xl mb-8">Stop learning. Start building.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Magnetic strength={0.3}>
-              <Link href="/apply">
+              <Link href="/how-to-join">
                 <motion.button
                   data-hover="true"
                   whileHover={{ scale: 1.05 }}
@@ -48,7 +48,7 @@ export default function CTA() {
             </Magnetic>
             <Magnetic strength={0.2}>
               <Link
-                href="/apply"
+                href="/how-to-join"
                 className="inline-flex items-center justify-center px-10 py-5 rounded-full border border-white/20 text-white/90 font-mono uppercase tracking-widest text-sm hover:border-white/50 transition-colors"
               >
                 View Application
