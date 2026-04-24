@@ -3,11 +3,11 @@
 import { motion } from "framer-motion"
 
 const phases = [
-  { id: "01", title: "Apply", date: "June 1-15", desc: "Submit your profile and prove your willingness to build." },
-  { id: "02", title: "Selection", date: "June 20", desc: "We handpick the top 1% execution-focused developers." },
-  { id: "03", title: "Build Phase", date: "July 1 - Aug 15", desc: "Team up, architect, and ship real product features." },
-  { id: "04", title: "Ship & Scale", date: "Aug 20", desc: "Finalize code, merge PRs, and prepare for production." },
-  { id: "05", title: "Showcase", date: "End of Aug", desc: "Present to industry leaders and claim your spot on the leaderboard." }
+  { id: "01", title: "Apply", date: "Step 1", desc: "Submit your application." },
+  { id: "02", title: "Selection", date: "Step 2", desc: "Only committed builders are selected." },
+  { id: "03", title: "Build", date: "Step 3", desc: "Work on real-world projects with structure." },
+  { id: "04", title: "Contribute", date: "Step 4", desc: "Push meaningful code, not small fixes." },
+  { id: "05", title: "Showcase", date: "Step 5", desc: "End with projects you can actually show." }
 ]
 
 export default function Timeline() {

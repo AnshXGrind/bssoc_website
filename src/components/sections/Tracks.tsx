@@ -7,28 +7,28 @@ const tracks = [
   {
     id: "01",
     title: "AI/ML",
-    description: "Train models, build intelligent systems, and integrate LLMs into robust applications.",
+    description: "Build intelligent systems, not just notebooks.",
     icon: <Cpu className="w-12 h-12 text-accent" />,
     color: "#FF4D00",
   },
   {
     id: "02",
-    title: "Full Stack",
-    description: "Architect scalable backend services and responsive frontends that delight users.",
+    title: "Web Dev",
+    description: "Create production-ready applications, not clones.",
     icon: <Code className="w-12 h-12 text-accent-blue" />,
     color: "#00E5FF",
   },
   {
     id: "03",
     title: "Systems",
-    description: "Low-level performance, distributed networks, and core infrastructure engineering.",
+    description: "Understand how things work under the hood.",
     icon: <Server className="w-12 h-12 text-white" />,
     color: "#FFFFFF",
   },
   {
     id: "04",
-    title: "Web3",
-    description: "Smart contracts, decentralized protocols, and next-gen blockchain solutions.",
+    title: "Open Source",
+    description: "Contribute where it actually matters.",
     icon: <Bitcoin className="w-12 h-12 text-purple-500" />,
     color: "#A855F7",
   },
@@ -49,7 +49,7 @@ export default function Tracks() {
             Program <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Tracks</span>
           </h2>
           <p className="text-white/50 font-mono max-w-sm uppercase text-sm tracking-widest leading-relaxed">
-            Choose your domain. Build with the best tools. Ship production-ready code.
+            Pick your track. Execute with structure. Ship real outcomes.
           </p>
         </motion.div>
 

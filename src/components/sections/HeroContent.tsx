@@ -44,7 +44,8 @@ export default function HeroContent() {
     return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [mouseX, mouseY])
 
-  const splitHeading = ["Boy Script", "Summer", "of code"]
+  const headingText = "Boy Script Summer of code"
+  const splitHeading = headingText.split(" ")
 
   return (
     <div ref={containerRef} className="absolute inset-0 flex items-center justify-center w-full h-full pointer-events-none">

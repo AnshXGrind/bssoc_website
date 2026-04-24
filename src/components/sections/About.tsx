@@ -11,7 +11,7 @@ export default function About() {
         <div className="md:col-span-8">
           <p className="text-accent-blue font-mono text-sm tracking-widest uppercase mb-8">What is BSSOC?</p>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight uppercase">
-            NO FAKE CONTRIBUTIONS. NO RESUME FLUFF. ONLY REAL WORK.
+            BUILDING REAL THINGS. NO DISTRACTIONS.
           </h2>
         </div>
 
@@ -22,7 +22,7 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            We build open-source products that scale. Real startup-level ideas, gamified contributor rankings, and a final showcase.
+            BSSOC is a focused open source program where developers stop consuming and start building.
           </motion.p>
           <motion.p
              initial={{ opacity: 0, y: 30 }}
@@ -30,7 +30,7 @@ export default function About() {
              viewport={{ once: true, margin: "-100px" }}
              transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Not a college club. An elite program focusing on real-world product building.
+            You work on real projects, solve real problems, and create work that actually matters.
           </motion.p>
         </div>
       </div>
