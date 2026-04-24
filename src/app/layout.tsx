@@ -32,7 +32,7 @@ export default function RootLayout({
       <body className="bg-[#0A0A0A] text-white antialiased overflow-x-hidden selection:bg-[#FF4D00] selection:text-white">
         <SmoothScroll>
           <CustomCursor />
-          <div className="fixed inset-0 pointer-events-none z-50 opacity-20 mix-blend-overlay" style={{backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")'}} />
+          <div className="fixed inset-0 pointer-events-none z-50 opacity-20 mix-blend-overlay noise-overlay" />
           {children}
         </SmoothScroll>
       </body>

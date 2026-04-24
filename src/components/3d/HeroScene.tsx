@@ -2,10 +2,17 @@
 
 import { useRef } from "react"
 import { useFrame } from "@react-three/fiber"
-import { Float, Box, Sphere, Cone } from "@react-three/drei"
+import { Float } from "@react-three/drei"
 import * as THREE from "three"
 
-function FloatingElement({ position, rotation, children, color }: any) {
+interface FloatingElementProps {
+  position: [number, number, number]
+  rotation: [number, number, number]
+  children: React.ReactNode
+  color: string
+}
+
+function FloatingElement({ position, rotation, children, color }: FloatingElementProps) {
   const meshRef = useRef<THREE.Mesh>(null)
 
   useFrame((state) => {
