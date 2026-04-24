@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  # Netlify automatically configures the correct publish directory for Next.js (usually .next) 
+  # when it detects a Next.js framework, but we explicitly set it here for good measure
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
