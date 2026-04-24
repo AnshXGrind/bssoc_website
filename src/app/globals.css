@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0A0A0A;
+  --foreground: #ffffff;
+  --accent: #FF4D00;
+  --accent-blue: #00E5FF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-blue: var(--accent-blue);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* Use Inter or Geist sans */
+  font-family: var(--font-sans), sans-serif;
+  cursor: none; /* Custom cursor */
+}
+
+a, button, [data-hover="true"] {
+  cursor: none; /* Keep cursor hidden for custom cursor */
+}
+
+/* Glassmorphism utility */
+.glass-card {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+}
+
+/* Text Selection */
+::selection {
+  background: var(--accent);
+  color: #fff;
+}

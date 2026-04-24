@@ -1,0 +1,57 @@
+"use client"
+
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
+
+const phases = [
+  { id: "01", title: "Apply", date: "June 1-15", desc: "Submit your profile and prove your willingness to build." },
+  { id: "02", title: "Selection", date: "June 20", desc: "We handpick the top 1% execution-focused developers." },
+  { id: "03", title: "Build Phase", date: "July 1 - Aug 15", desc: "Team up, architect, and ship real product features." },
+  { id: "04", title: "Ship & Scale", date: "Aug 20", desc: "Finalize code, merge PRs, and prepare for production." },
+  { id: "05", title: "Showcase", date: "End of Aug", desc: "Present to industry leaders and claim your spot on the leaderboard." }
+]
+
+export default function Timeline() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  
+  return (
+    <section ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#050505] relative border-t border-accent/20">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-24 text-center">
+          How It <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Works</span>
+        </h2>
+
+        <div className="relative border-l border-white/10 md:border-none">
+          {/* Timeline Center Line for Desktop */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-white/10 hidden md:block" />
+
+          {phases.map((phase, i) => (
+             <motion.div
+              key={phase.id}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
+              className={`flex flex-col md:flex-row w-full mb-16 relative items-center pl-8 md:pl-0 ${i % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}
+             >
+               {/* Mobile Timeline Dot */}
+               <div className="absolute left-[-5px] top-4 w-2.5 h-2.5 rounded-full bg-accent md:hidden" />
+
+               {/* Desktop Timeline Dot */}
+               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#0A0A0A] border-2 border-accent hidden md:flex justify-center items-center">
+                  <div className="w-1.5 h-1.5 bg-accent-blue rounded-full shadow-[0_0_10px_#00E5FF]" />
+               </div>
+
+               <div className={`w-full md:w-[45%] glass-card p-8 group hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                  <div className="text-accent/30 font-mono text-xl md:text-3xl font-bold mb-2 uppercase group-hover:text-accent transition-colors duration-300">{phase.id}.</div>
+                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-wide mb-2 text-white group-hover:text-accent-blue transition-colors duration-300">{phase.title}</h3>
+                  <div className="text-xs font-mono tracking-widest uppercase bg-white/5 inline-block px-3 py-1 rounded-full mb-4 text-white/50">{phase.date}</div>
+                  <p className="text-white/60 font-mono text-sm leading-relaxed">{phase.desc}</p>
+               </div>
+             </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
