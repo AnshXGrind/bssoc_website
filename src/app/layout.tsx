@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import CustomCursor from "@/components/layout/CustomCursor";
 import LoadingScreen from "@/components/layout/LoadingScreen";
 import ScrollProgress from "@/components/layout/ScrollProgress";
+import Navbar from "@/components/layout/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,33 +31,32 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} dark perspective-1000`}
+      className={`${geistSans.variable} ${geistMono.variable} dark perspective-1000 overflow-x-hidden`}
     >
-      <body>
+      <body className="overflow-x-hidden">
         <LoadingScreen />
         <ScrollProgress />
+        <Navbar />
+        <Link
+          href="/"
+          aria-label="BSSOC Home"
+          className="fixed z-[1000] uppercase font-black tracking-tighter text-white text-2xl md:text-3xl"
+          style={{ top: "20px", left: "32px" }}
+        >
+          BSSOC.
+        </Link>
         <SmoothScroll>
           <CustomCursor />
-          
-          {/* Sticky Logo */}
-          <div className="fixed top-6 left-6 md:top-8 md:left-8 z-50 pointer-events-none mix-blend-difference">
-            <a href="/" className="pointer-events-auto inline-block">
-              <span className="text-2xl md:text-3xl font-black tracking-tighter text-white uppercase" style={{ fontFamily: 'var(--font-geist-sans)' }}>
-                BSSOC
-              </span>
-            </a>
-          </div>
 
-          {/* Global Background Effects - Optimized */}
-          <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-[#0A0A0A]">
+          <div className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden bg-[#0A0A0A] max-w-full">
             <div className="absolute inset-0 opacity-[0.03] noise-overlay" />
           </div>
 
           {children}
 
-          {/* Footer Image Temp */}
-          <footer className="w-full flex justify-center py-8 z-50 relative bg-[#0A0A0A]">
-            <img src="/footer-image.png" alt="Footer" className="w-full max-w-[1200px] h-auto object-contain" />
+          <footer className="w-full max-w-full overflow-hidden flex justify-between items-center py-8 z-50 relative bg-[#0A0A0A] px-6 md:px-12 border-t border-white/10">
+            <span className="text-xs md:text-sm text-white/50 font-mono uppercase tracking-widest">BSSOC</span>
+            <span className="text-xs md:text-sm text-white/50 font-mono uppercase tracking-widest">Build. Ship. Scale.</span>
           </footer>
         </SmoothScroll>
       </body>

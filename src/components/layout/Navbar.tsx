@@ -1,56 +1,77 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { useMemo, useState } from "react"
+import { Menu, X } from "lucide-react"
 
 const navItems = [
-  { label: "What is BSSOC", href: "#about" },
-  { label: "Program Tracks", href: "#tracks" },
-  { label: "How it works", href: "#timeline" },
-  { label: "How to Join", href: "#join" },
+  { label: "About", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Mentors", href: "/mentors" },
+  { label: "Contributors", href: "/contributors" },
+  { label: "Apply", href: "/apply" },
 ]
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(false)
+  const pathname = usePathname()
+  const [isOpen, setIsOpen] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Show navbar after scrolling past the hero section (approx 100vh)
-      if (window.scrollY > window.innerHeight * 0.8) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    handleScroll() // Initialize on mount
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  const activeHref = useMemo(
+    () => navItems.find((item) => pathname === item.href)?.href,
+    [pathname]
+  )
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.nav
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -100, opacity: 0 }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed top-0 left-0 right-0 z-[100] flex justify-center py-4 px-6 pointer-events-none"
-        >
-          <div className="flex items-center gap-8 bg-[#0A0A0A]/80 backdrop-blur-md px-8 py-3 rounded-full border border-white/10 pointer-events-auto">
-            {navItems.map((item) => (
-              <a
+    <nav className="fixed top-0 left-0 right-0 z-[999] px-6 md:px-12 py-5 pointer-events-none">
+      <div className="mx-auto max-w-full flex items-center justify-end pointer-events-auto">
+        <div className="hidden md:flex items-center gap-1 bg-[#0A0A0A]/85 border border-white/10 rounded-full px-3 py-2 backdrop-blur-md">
+          {navItems.map((item) => {
+            const isActive = activeHref === item.href
+            return (
+              <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-white/70 hover:text-[#FF4D00] transition-colors uppercase tracking-widest"
+                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest transition-colors ${
+                  isActive ? "text-black bg-white" : "text-white/75 hover:text-white"
+                }`}
               >
                 {item.label}
-              </a>
-            ))}
+              </Link>
+            )
+          })}
+        </div>
+
+        <button
+          aria-label="Toggle navigation menu"
+          onClick={() => setIsOpen((prev) => !prev)}
+          className="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full bg-[#0A0A0A]/85 border border-white/15 text-white"
+        >
+          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
+      </div>
+
+      {isOpen && (
+        <div className="md:hidden mt-3 mx-auto max-w-full bg-[#0A0A0A]/95 border border-white/10 rounded-2xl p-3 backdrop-blur-md pointer-events-auto">
+          <div className="flex flex-col gap-1">
+            {navItems.map((item) => {
+              const isActive = activeHref === item.href
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`px-4 py-3 rounded-xl text-sm font-semibold uppercase tracking-wider transition-colors ${
+                    isActive ? "bg-white text-black" : "text-white/80 hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
           </div>
-        </motion.nav>
+        </div>
       )}
-    </AnimatePresence>
+    </nav>
   )
 }

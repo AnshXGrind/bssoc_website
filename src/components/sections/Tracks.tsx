@@ -1,7 +1,6 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { Cpu, Server, Code, Bitcoin } from "lucide-react"
 
 const tracks = [
@@ -36,10 +35,8 @@ const tracks = [
 ]
 
 export default function Tracks() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  
   return (
-    <section id="tracks" ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#0A0A0A] relative z-10">
+    <section id="tracks" className="py-20 md:py-24 px-6 md:px-12 bg-[#0A0A0A] relative z-10 max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-20">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

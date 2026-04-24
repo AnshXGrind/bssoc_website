@@ -32,7 +32,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="py-32 px-4 md:px-12 lg:px-24 bg-[#0A0A0A] relative z-10">
+    <section className="py-20 md:py-24 px-6 md:px-12 bg-[#0A0A0A] relative z-10 max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-20">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -45,7 +45,7 @@ export default function Projects() {
             Real <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Projects</span>
           </h2>
           <p className="text-white/50 font-mono max-w-sm uppercase text-sm tracking-widest leading-relaxed">
-            We don't toy around. View previous high-impact open source repositories.
+            We don&apos;t toy around. View previous high-impact open source repositories.
           </p>
         </motion.div>
 

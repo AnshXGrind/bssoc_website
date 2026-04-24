@@ -1,7 +1,6 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 
 const phases = [
   { id: "01", title: "Apply", date: "June 1-15", desc: "Submit your profile and prove your willingness to build." },
@@ -12,10 +11,8 @@ const phases = [
 ]
 
 export default function Timeline() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  
   return (
-    <section id="timeline" ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#050505] relative border-t border-accent/20">
+    <section id="timeline" className="py-20 md:py-24 px-6 md:px-12 bg-[#050505] relative border-t border-accent/20 max-w-full overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-24 text-center">
           How It <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Works</span>

@@ -1,12 +1,15 @@
 export default function ContributorsPage() {
   return (
-    <div className="min-h-screen pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto flex flex-col items-center justify-center text-center">
-      <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Contributors</span>
-      </h1>
-      <p className="text-xl md:text-2xl text-white/50 font-mono mb-8">
-        Leaderboard and builders. No fluff, just code.
-      </p>
-    </div>
+    <main className="min-h-screen pt-28 md:pt-32 pb-16 px-6 md:px-12 max-w-full overflow-hidden bg-[#0A0A0A]">
+      <section className="max-w-7xl mx-auto py-20">
+        <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">
+          Contributors
+        </h1>
+        <p className="text-white/70 font-mono text-lg max-w-3xl">
+          Contributors are expected to communicate clearly, pick meaningful issues, and ship real
+          improvements continuously.
+        </p>
+      </section>
+    </main>
   );
 }
