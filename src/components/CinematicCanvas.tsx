@@ -18,7 +18,7 @@ export default function CinematicCanvas() {
         <Particles />
 
         {/* FLOATING LOGO */}
-        <Float speed={2} rotationIntensity={0.5} floatIntensity={1.5}>
+        <Float speed={2} rotationIntensity={0.3} floatIntensity={1}>
           <Text
             fontSize={0.8}
             color="#ffffff"

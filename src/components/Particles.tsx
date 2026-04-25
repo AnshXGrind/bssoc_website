@@ -9,7 +9,7 @@ export default function Particles() {
   const { mouse, viewport } = useThree();
 
   // generate positions once
-  const count = 1200;
+  const count = 600;
   const positions = useMemo(() => {
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {

@@ -4,7 +4,6 @@ import { motion, animate, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
-// lazy load WebGL (performance)
 const CinematicCanvas = dynamic(() => import("./CinematicCanvas"), {
   ssr: false,
 });
@@ -12,22 +11,24 @@ const CinematicCanvas = dynamic(() => import("./CinematicCanvas"), {
 export default function CinematicLoader({ onFinish }: any) {
   const progress = useMotionValue(0);
   const [value, setValue] = useState(0);
-  const [exit, setExit] = useState(false);
+  const [phase, setPhase] = useState("intro"); // intro ? move ? exit
 
   useEffect(() => {
     const controls = animate(progress, 100, {
-      duration: 2,
+      duration: 1.6,
       ease: "easeInOut",
       onUpdate: (v) => setValue(Math.floor(v)),
       onComplete: () => {
-        setExit(true);
+        setPhase("move");
 
-        // micro sound
-        const audio = new Audio("/click.mp3");
-        audio.volume = 0.2;
+        const audio = new Audio("/tick.mp3");
+        audio.volume = 0.15;
         audio.play().catch(() => {});
 
-        setTimeout(onFinish, 900);
+        setTimeout(() => {
+          setPhase("exit");
+          setTimeout(onFinish, 500);
+        }, 800);
       },
     });
 
@@ -36,47 +37,60 @@ export default function CinematicLoader({ onFinish }: any) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[9999]"
-      animate={{ opacity: exit ? 0 : 1 }}
-      transition={{ duration: 0.6 }}
+      className="fixed inset-0 z-[9999] bg-black"
+      animate={{ opacity: phase === "exit" ? 0 : 1 }}
+      transition={{ duration: 0.5 }}
     >
-      {/* WebGL background */}
-      <div className="absolute inset-0">
+      {/* PARTICLES BACKGROUND */}
+      <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: phase === "intro" ? 1 : 0.6 }}
+        transition={{ duration: 0.6 }}
+      >
         <CinematicCanvas />
-      </div>
+      </motion.div>
 
-      {/* overlay UI */}
+      {/* CENTER CONTENT */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        {/* logo text fallback / reinforcement */}
+
+        {/* LOGO */}
         <motion.h1
           className="text-white text-5xl md:text-7xl font-bold tracking-widest"
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={
-            exit
+            phase === "move"
               ? {
                   x: "-42vw",
                   y: "-42vh",
-                  scale: 0.5,
+                  scale: 0.45,
                 }
               : {
                   opacity: 1,
                   scale: 1,
                 }
           }
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{
+            duration: 0.8,
+            ease: [0.65, 0, 0.35, 1], // smooth cubic
+          }}
         >
           BSSOC<span className="text-[#FF4D00]">.</span>
         </motion.h1>
 
-        {/* percentage */}
-        <motion.p
+        {/* PERCENT */}
+        <motion.div
           className="mt-6 text-white/70 text-lg"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: phase === "intro" ? 1 : 0 }}
+          transition={{ duration: 0.4 }}
         >
           {value}%
-        </motion.p>
+        </motion.div>
       </div>
+
+      {/* GLOW */}
+      <div className="absolute w-[500px] h-[500px] bg-[#FF4D00] opacity-20 blur-[160px] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
     </motion.div>
   );
 }

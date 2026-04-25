@@ -22,6 +22,9 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[999] px-6 md:px-12 py-5 pointer-events-none">
+      <h1 className="fixed top-6 left-8 text-white text-2xl font-bold tracking-widest z-50 pointer-events-auto">
+        BSSOC<span className="text-[#FF4D00]">.</span>
+      </h1>
       <div className="mx-auto max-w-full flex items-center justify-end pointer-events-auto">
         <div className="hidden md:flex items-center gap-1 bg-[#0A0A0A]/85 border border-white/10 rounded-full px-3 py-2 backdrop-blur-md">
           {navItems.map((item) => {
