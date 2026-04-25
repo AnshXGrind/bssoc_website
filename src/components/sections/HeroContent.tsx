@@ -44,8 +44,8 @@ export default function HeroContent() {
     return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [mouseX, mouseY])
 
-  const headingText = "Boy Script Summer of code"
-  const splitHeading = headingText.split(" ")
+  const headingText = "Build. Ship. Get Recognized."
+  const splitHeading = ["Build.", "Ship.", "Get Recognized."]
 
   return (
     <div ref={containerRef} className="absolute inset-0 flex items-center justify-center w-full h-full pointer-events-none">
@@ -84,8 +84,33 @@ export default function HeroContent() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-base md:text-xl text-white/60 font-mono max-w-2xl mt-4"
         >
-          Join the most execution-focused open source program. Not everyone ships. We do.
+          BoyScript Summer of Code (BSSOC) is a structured program where developers build real-world projects.
         </motion.p>
+
+        <motion.ul
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="mt-6 flex flex-wrap justify-center gap-4 md:gap-8 font-mono text-sm md:text-base text-white/80"
+        >
+          <li className="flex items-center gap-2"><span className="text-accent">•</span> Real projects</li>
+          <li className="flex items-center gap-2"><span className="text-accent">•</span> Structured workflow</li>
+          <li className="flex items-center gap-2"><span className="text-accent">•</span> Output-driven</li>
+        </motion.ul>
+
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8, delay: 1.2 }}
+           className="mt-10 flex flex-col items-center gap-4"
+        >
+          <a href="/how-to-join" className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 ease-in-out bg-accent rounded-full hover:bg-[#00E5FF] overflow-hidden shadow-[0_0_40px_rgba(255,77,0,0.4)] hover:shadow-[0_0_60px_rgba(0,229,255,0.6)] uppercase tracking-widest text-sm">
+            Apply Now
+          </a>
+          <span className="text-xs md:text-sm text-white/50 font-mono tracking-wide mt-2">
+            8–12 weeks • Remote • Project-based • Portfolio-ready
+          </span>
+        </motion.div>
       </motion.div>
 
       <motion.div 

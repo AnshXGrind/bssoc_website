@@ -5,9 +5,10 @@ import { motion } from "framer-motion"
 const phases = [
   { id: "01", title: "Apply", date: "Step 1", desc: "Submit your application." },
   { id: "02", title: "Selection", date: "Step 2", desc: "Only committed builders are selected." },
-  { id: "03", title: "Build", date: "Step 3", desc: "Work on real-world projects with structure." },
-  { id: "04", title: "Contribute", date: "Step 4", desc: "Push meaningful code, not small fixes." },
-  { id: "05", title: "Showcase", date: "Step 5", desc: "End with projects you can actually show." }
+  { id: "03", title: "Community Phase", date: "Step 3", desc: "Engage and learn with peers." },
+  { id: "04", title: "Build", date: "Step 4", desc: "Work on real-world projects with structure." },
+  { id: "05", title: "Evaluation", date: "Step 5", desc: "Get code reviewed by mentors." },
+  { id: "06", title: "Showcase", date: "Step 6", desc: "Present portfolio-ready output." }
 ]
 
 export default function Timeline() {

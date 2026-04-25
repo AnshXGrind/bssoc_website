@@ -27,7 +27,7 @@ export default function CTA() {
           <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none mb-12">
             Ready to build <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">something real?</span>
           </h2>
-          <p className="text-white/70 font-mono text-base md:text-xl mb-8">Stop learning. Start building.</p>
+          <p className="text-white/70 font-mono text-base md:text-xl mb-8">Stop consuming. Start shipping.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Magnetic strength={0.3}>
               <Link href="/how-to-join">
@@ -51,7 +51,7 @@ export default function CTA() {
                 href="/how-to-join"
                 className="inline-flex items-center justify-center px-10 py-5 rounded-full border border-white/20 text-white/90 font-mono uppercase tracking-widest text-sm hover:border-white/50 transition-colors"
               >
-                View Application
+                Open Application Form
               </Link>
             </Magnetic>
           </div>

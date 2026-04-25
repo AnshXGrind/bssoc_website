@@ -22,7 +22,7 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            BSSOC is a focused open source program where developers stop consuming and start building.
+            BSSOC is a structured open-source program designed to help developers move beyond tutorials and build real-world projects.
           </motion.p>
           <motion.p
              initial={{ opacity: 0, y: 30 }}
@@ -30,7 +30,7 @@ export default function About() {
              viewport={{ once: true, margin: "-100px" }}
              transition={{ duration: 0.6, delay: 0.2 }}
           >
-            You work on real projects, solve real problems, and create work that actually matters.
+            Participants follow a defined workflow, contribute to meaningful codebases, and produce portfolio-ready output.
           </motion.p>
         </div>
       </div>
