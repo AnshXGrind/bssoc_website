@@ -1,22 +1,28 @@
 "use client";
 
-import { motion, useMotionValue, animate } from "framer-motion";
+import { motion, animate, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
-import ThreeLogo from "./ThreeLogo";
+import dynamic from "next/dynamic";
 
-export default function CinematicLoader({ onFinish }: { onFinish: () => void }) {
+// lazy load WebGL (performance)
+const CinematicCanvas = dynamic(() => import("./CinematicCanvas"), {
+  ssr: false,
+});
+
+export default function CinematicLoader({ onFinish }: any) {
   const progress = useMotionValue(0);
-  const [display, setDisplay] = useState(0);
+  const [value, setValue] = useState(0);
   const [exit, setExit] = useState(false);
 
   useEffect(() => {
     const controls = animate(progress, 100, {
-      duration: 1.8,
+      duration: 2,
       ease: "easeInOut",
-      onUpdate: (v) => setDisplay(Math.floor(v)),
+      onUpdate: (v) => setValue(Math.floor(v)),
       onComplete: () => {
         setExit(true);
 
+        // micro sound
         const audio = new Audio("/click.mp3");
         audio.volume = 0.2;
         audio.play().catch(() => {});
@@ -30,42 +36,47 @@ export default function CinematicLoader({ onFinish }: { onFinish: () => void }) 
 
   return (
     <motion.div
-      className="fixed inset-0 bg-black z-[9999] flex flex-col items-center justify-center"
+      className="fixed inset-0 z-[9999]"
       animate={{ opacity: exit ? 0 : 1 }}
       transition={{ duration: 0.6 }}
     >
-      {/* Glow */}
-      <div className="absolute w-[500px] h-[500px] bg-[#FF4D00] opacity-20 blur-[180px] rounded-full" />
+      {/* WebGL background */}
+      <div className="absolute inset-0">
+        <CinematicCanvas />
+      </div>
 
-      {/* 3D LOGO */}
-      <motion.div
-        className="w-[200px] h-[200px]"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={
-          exit
-            ? {
-                x: "-42vw",
-                y: "-42vh",
-                scale: 0.4,
-              }
-            : {
-                scale: 1,
-                opacity: 1,
-              }
-        }
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-      >
-        <ThreeLogo />
-      </motion.div>
+      {/* overlay UI */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        {/* logo text fallback / reinforcement */}
+        <motion.h1
+          className="text-white text-5xl md:text-7xl font-bold tracking-widest"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={
+            exit
+              ? {
+                  x: "-42vw",
+                  y: "-42vh",
+                  scale: 0.5,
+                }
+              : {
+                  opacity: 1,
+                  scale: 1,
+                }
+          }
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
+          BSSOC<span className="text-[#FF4D00]">.</span>
+        </motion.h1>
 
-      {/* TEXT UNDER */}
-      <motion.h1
-        className="text-white text-3xl mt-6 tracking-widest"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        {display}%
-      </motion.h1>
+        {/* percentage */}
+        <motion.p
+          className="mt-6 text-white/70 text-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          {value}%
+        </motion.p>
+      </div>
     </motion.div>
   );
 }
