@@ -16,54 +16,61 @@ export default function HeroBackground() {
   const nearY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"])
 
   return (
-    <div ref={ref} className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#000000]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_15%,rgba(255,255,255,0.11),transparent_45%)]" />
+    <div ref={ref} className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#2D82FF]">
+      {/* Bright blue sky gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1C6DD0] to-[#519CFF]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_15%,rgba(255,255,255,0.2),transparent_60%)]" />
 
-      <motion.div style={{ y: farY }} className="absolute bottom-0 left-0 right-0 w-full opacity-85">
+      {/* Far distant peaks */}
+      <motion.div style={{ y: farY }} className="absolute bottom-0 left-0 right-0 w-full opacity-70">
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[42vh] md:min-h-[56vh] mountain-drift-slow" preserveAspectRatio="none">
-          {/* Distant continuous ridge, shaped like a broad Himalayan wall. */}
           <path
-            fill="#5a7ba0"
-            d="M0,308 L52,298 L104,286 L154,272 L206,252 L258,236 L308,218 L358,194 L406,174 L452,156 L498,146 L544,134 L590,116 L636,106 L680,86 L724,96 L766,76 L808,56 L850,72 L892,92 L934,106 L978,126 L1022,138 L1066,122 L1108,114 L1150,122 L1194,140 L1238,158 L1282,176 L1326,202 L1372,236 L1412,266 L1440,286 L1440,420 L0,420 Z"
+            fill="#7CAEFF"
+            d="M0,280 L40,250 L90,265 L140,230 L200,245 L260,200 L320,225 L380,180 L440,210 L500,160 L560,195 L620,150 L680,185 L740,140 L800,165 L860,120 L920,150 L980,110 L1040,145 L1100,120 L1160,160 L1220,130 L1280,175 L1340,150 L1400,190 L1440,170 L1440,420 L0,420 Z"
           />
         </svg>
       </motion.div>
 
+      {/* Main majestic peak mimicking the photo */}
       <motion.div style={{ y: midY }} className="absolute bottom-0 left-0 right-0 w-full">
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[42vh] md:min-h-[58vh] mountain-drift-mid" preserveAspectRatio="none">
-          {/* Main ridge with a dominant center-left summit and stepped shoulders. */}
+          {/* Base rock/shadow of the main range */}
           <path
-            fill="#7e97b6"
-            d="M0,350 L48,334 L98,318 L148,292 L198,270 L248,252 L294,226 L338,206 L382,188 L424,170 L464,152 L504,164 L546,144 L586,124 L624,102 L662,90 L700,62 L736,72 L772,52 L806,34 L838,48 L870,76 L904,94 L938,112 L972,132 L1006,146 L1042,132 L1078,118 L1112,126 L1148,144 L1186,168 L1226,184 L1266,206 L1308,230 L1350,254 L1394,280 L1440,304 L1440,420 L0,420 Z"
+            fill="#3B73B9"
+            d="M0,320 L60,300 L120,310 L180,270 L240,290 L300,220 L350,240 L420,180 L480,210 L540,150 L580,170 L640,100 L720,20 L760,60 L800,30 L840,80 L880,50 L940,120 L1000,90 L1060,160 L1120,130 L1180,190 L1240,170 L1300,230 L1360,210 L1440,260 L1440,420 L0,420 Z"
           />
-          {/* Snowcaps following the same major crest line for realism. */}
+          {/* Intense snow caps mimicking the bright white peaks */}
           <path
-            fill="rgba(235,244,255,0.9)"
-            d="M414,170 L442,154 L468,148 L494,154 L522,146 L548,136 L574,122 L602,108 L630,100 L656,90 L682,72 L706,66 L730,72 L752,64 L776,52 L800,40 L822,44 L844,56 L866,72 L890,88 L914,98 L938,112 L960,120 L936,120 L908,108 L880,96 L854,80 L830,64 L806,56 L782,62 L758,74 L734,84 L706,78 L678,84 L650,96 L622,108 L596,118 L568,132 L540,144 L512,154 L484,160 L454,160 L430,168 Z"
+            fill="#FFFFFF"
+            d="M420,180 L480,210 L540,150 L580,170 L640,100 L720,20 L760,60 L800,30 L840,80 L880,50 L940,120 L900,125 L860,90 L820,115 L780,80 L740,110 L700,70 L660,130 L600,100 L560,140 Z"
           />
           <path
-            fill="rgba(255,255,255,0.45)"
-            d="M736,72 L758,62 L780,52 L802,40 L824,44 L810,54 L792,64 L772,72 L752,78 Z"
+            fill="rgba(255,255,255,0.7)"
+            d="M300,220 L350,240 L420,180 L380,210 L340,190 Z"
+          />
+          <path
+            fill="rgba(255,255,255,0.8)"
+            d="M1000,90 L1060,160 L1020,150 L980,110 Z"
           />
         </svg>
       </motion.div>
 
+      {/* Near lower hills/ridges */}
       <motion.div style={{ y: nearY }} className="absolute bottom-0 left-0 right-0 w-full">
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[44vh] md:min-h-[60vh] mountain-drift-fast" preserveAspectRatio="none">
-          {/* Dark foothills and lower ridges, matching the reference depth stack. */}
           <path
-            fill="#36567f"
-            d="M0,378 L72,364 L144,346 L216,324 L286,338 L356,312 L426,326 L500,300 L572,316 L644,294 L716,312 L792,288 L868,308 L946,286 L1026,308 L1104,292 L1182,314 L1260,298 L1338,320 L1412,332 L1440,338 L1440,420 L0,420 Z"
+            fill="#224C80"
+            d="M0,350 L70,330 L140,345 L210,310 L280,325 L350,280 L420,300 L490,260 L560,285 L630,240 L700,265 L770,220 L840,250 L910,210 L980,235 L1050,190 L1120,220 L1190,180 L1260,215 L1330,190 L1400,230 L1440,210 L1440,420 L0,420 Z"
           />
           <path
-            fill="#17345a"
-            d="M0,394 L86,382 L170,366 L252,348 L336,358 L420,336 L504,350 L590,332 L676,346 L760,326 L848,344 L936,324 L1022,342 L1108,328 L1192,346 L1278,334 L1364,352 L1440,362 L1440,420 L0,420 Z"
+            fill="#122E54"
+            d="M0,380 L90,360 L180,375 L270,340 L360,355 L450,310 L540,330 L630,290 L720,315 L810,270 L900,295 L990,250 L1080,280 L1170,240 L1260,265 L1350,230 L1440,260 L1440,420 L0,420 Z"
           />
         </svg>
       </motion.div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-[#77b6f0]/10 via-transparent to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-[#0f172a] to-transparent opacity-90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-100" />
     </div>
   )
 }
