@@ -29,6 +29,36 @@ body {
   animation: float 4s ease-in-out infinite;
 }
 
+@keyframes mountainDriftSlow {
+  0% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(-0.6%) scale(1.008); }
+  100% { transform: translateX(0) scale(1); }
+}
+
+@keyframes mountainDriftMid {
+  0% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(0.8%) scale(1.01); }
+  100% { transform: translateX(0) scale(1); }
+}
+
+@keyframes mountainDriftFast {
+  0% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(-1%) scale(1.012); }
+  100% { transform: translateX(0) scale(1); }
+}
+
+.mountain-drift-slow {
+  animation: mountainDriftSlow 18s ease-in-out infinite;
+}
+
+.mountain-drift-mid {
+  animation: mountainDriftMid 14s ease-in-out infinite;
+}
+
+.mountain-drift-fast {
+  animation: mountainDriftFast 11s ease-in-out infinite;
+}
+
 .will-change-transform {
   will-change: transform;
 }
@@ -39,6 +69,26 @@ body {
 
 .glass-card:hover {
   @apply scale-[1.05] rotate-1;
+}
+
+.page-shell {
+  @apply pt-28 md:pt-32 pb-16 max-w-full overflow-hidden;
+}
+
+.page-hero-section {
+  @apply px-6 md:px-12 py-20 bg-[#0f172a];
+}
+
+.page-alt-section {
+  @apply px-6 md:px-12 py-20 bg-[#1e293b] border-y border-white/10;
+}
+
+.page-pill {
+  @apply inline-block border border-accent/30 bg-accent/10 text-accent rounded-full px-4 py-1.5 text-xs font-mono tracking-widest uppercase mb-8;
+}
+
+.page-title {
+  @apply text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-none;
 }
 
 .noise-overlay {
