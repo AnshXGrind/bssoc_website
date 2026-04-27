@@ -40,15 +40,13 @@ export default function Particles() {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={positions.length / 3}
-          array={positions}
-          itemSize={3}
+          args={[positions, 3]}
         />
       </bufferGeometry>
 
       <pointsMaterial
         size={0.04}
-        color="#FF4D00"
+        color="#94a3b8"
         sizeAttenuation
         transparent
         opacity={0.9}

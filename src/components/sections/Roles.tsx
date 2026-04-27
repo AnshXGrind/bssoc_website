@@ -17,7 +17,7 @@ const roles = [
 
 export default function Roles() {
   return (
-    <section className="py-20 md:py-24 px-6 md:px-12 bg-[#050505] border-t border-white/10 max-w-full overflow-hidden">
+    <section className="py-20 md:py-24 px-6 md:px-12 bg-[#1e293b] border-t border-white/10 max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-10">
           Roles

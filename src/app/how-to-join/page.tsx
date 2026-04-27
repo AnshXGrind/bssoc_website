@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function HowToJoinPage() {
   return (
     <main className="pt-28 md:pt-32 pb-16 max-w-full overflow-hidden">
-      <section className="px-6 md:px-12 py-20 bg-[#0A0A0A]">
+      <section className="px-6 md:px-12 py-20 bg-[#0f172a]">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">
             How to <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Join</span>

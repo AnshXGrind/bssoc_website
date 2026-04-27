@@ -29,20 +29,20 @@ export default function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0A0A0A] text-white"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0f172a] text-white"
         >
           <div className="flex flex-col items-center">
             <motion.h1 
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="text-6xl md:text-8xl font-black uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-[#FF4D00] to-[#00E5FF] mb-4"
+              className="text-6xl md:text-8xl font-black uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-[#94a3b8] to-[#00E5FF] mb-4"
             >
               BSSOC
             </motion.h1>
             <div className="w-64 h-1 bg-white/10 rounded-full overflow-hidden mb-4">
               <motion.div 
-                className="h-full bg-[#FF4D00]"
+                className="h-full bg-[#94a3b8]"
                 initial={{ width: "0%" }}
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.1 }}

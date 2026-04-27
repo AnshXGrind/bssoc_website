@@ -75,7 +75,7 @@ export default function CinematicLoader({ onFinish }: any) {
             ease: [0.65, 0, 0.35, 1], // smooth cubic
           }}
         >
-          BSSOC<span className="text-[#FF4D00]">.</span>
+          BSSOC<span className="text-[#94a3b8]">.</span>
         </motion.h1>
 
         {/* PERCENT */}
@@ -90,7 +90,7 @@ export default function CinematicLoader({ onFinish }: any) {
       </div>
 
       {/* GLOW */}
-      <div className="absolute w-[500px] h-[500px] bg-[#FF4D00] opacity-20 blur-[160px] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute w-[500px] h-[500px] bg-[#94a3b8] opacity-20 blur-[160px] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
     </motion.div>
   );
 }

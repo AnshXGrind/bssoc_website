@@ -1,7 +1,7 @@
 export default function HowItWorksPage() {
   return (
     <main className="pt-28 md:pt-32 pb-16 max-w-full overflow-hidden">
-      <section className="px-6 md:px-12 py-20 bg-[#0A0A0A]">
+      <section className="px-6 md:px-12 py-20 bg-[#0f172a]">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">
             How It <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Works</span>
@@ -16,7 +16,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-12 py-20 bg-[#050505] border-y border-white/10">
+      <section className="px-6 md:px-12 py-20 bg-[#1e293b] border-y border-white/10">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8">Program Tracks</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white/75 font-mono">

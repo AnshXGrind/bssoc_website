@@ -9,8 +9,8 @@ export default function CTA() {
   const containerRef = useRef<HTMLDivElement>(null)
   
   return (
-    <section ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#0A0A0A] relative z-10 overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/20 via-[#0A0A0A] to-[#0A0A0A]" />
+    <section ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#0f172a] relative z-10 overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/20 via-[#0f172a] to-[#0f172a]" />
       
       <div className="max-w-4xl mx-auto relative z-20 text-center">
         <motion.div 
@@ -45,7 +45,7 @@ export default function CTA() {
       </div>
 
       <div className="absolute bottom-10 left-0 right-0 flex justify-between px-12 font-mono text-xs uppercase tracking-widest text-white/30 z-20">
-        <span>BSSOC © {new Date().getFullYear()}</span>
+        <span>BSSOC Â© {new Date().getFullYear()}</span>
         <span>Built to Scale</span>
       </div>
     </section>

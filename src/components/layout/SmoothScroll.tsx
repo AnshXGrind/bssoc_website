@@ -10,12 +10,12 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.1, // more responsive to mouse sensitivity
+      lerp: 0.05, // Lower for a more buttery, premium "heavy" scroll
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
+      wheelMultiplier: 0.9, // Slightly softer scrolling resistance
+      touchMultiplier: 1.5,
     })
 
     lenisRef.current = lenis
