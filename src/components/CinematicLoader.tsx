@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 export default function CinematicLoader({ onFinish }: any) {
   const words = ["BOY", "SCRIPT", "SUMMER", "OF", "CODE"];
-  const STEP_MS = 520;
-  const EXIT_MS = 700;
+  const STEP_MS = 800;
+  const EXIT_MS = 1000;
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
@@ -49,7 +49,7 @@ export default function CinematicLoader({ onFinish }: any) {
             return (
               <h1
                 key={word}
-                className="absolute inset-0 text-white text-5xl md:text-7xl lg:text-8xl font-black tracking-[0.18em] uppercase"
+                className="absolute inset-x-0 mx-auto text-white text-5xl md:text-7xl lg:text-8xl font-black tracking-wider uppercase"
                 style={{
                   opacity: isExiting ? 0 : isActive ? 1 : 0,
                   filter: isActive ? "blur(0px)" : "blur(6px)",

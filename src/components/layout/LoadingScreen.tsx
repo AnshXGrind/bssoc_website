@@ -15,9 +15,9 @@ export default function LoadingScreen() {
           setTimeout(() => setIsLoading(false), 500)
           return 100
         }
-        return prev + Math.floor(Math.random() * 10) + 1
+        return prev + Math.floor(Math.random() * 8) + 1
       })
-    }, 50)
+    }, 80)
 
     return () => clearInterval(timer)
   }, [])
@@ -36,7 +36,7 @@ export default function LoadingScreen() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="text-6xl md:text-8xl font-black uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-[#94a3b8] to-[#00E5FF] mb-4"
+              className="text-6xl md:text-8xl font-black uppercase tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#94a3b8] to-[#00E5FF] mb-4"
             >
               BSSOC
             </motion.h1>
