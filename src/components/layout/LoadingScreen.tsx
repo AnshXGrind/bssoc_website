@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function LoadingScreen() {
-  const words = ["BOY", "SCRIPT", "SUMMER", "OF", "CODE", "BSSOC"];
+  const words = ["BOY", "SCRIPT", "SUMMER", "OF", "CODE"];
   const STEP_MS = 1000; // Slower, readable pace
   const EXIT_MS = 1500; // Longer pause on the last word before the fade out begins
 
@@ -56,8 +56,8 @@ export default function LoadingScreen() {
               const isActive = idx === activeIndex;
               const wasShown = idx < activeIndex;
               
-              // Last word "BSSOC" gets a special gradient
-              const textClasses = word === "BSSOC" 
+              // Last word "CODE" gets a special gradient
+              const textClasses = word === "CODE" 
                 ? "text-transparent bg-clip-text bg-gradient-to-r from-white to-[#94a3b8]" 
                 : "text-white";
 
