@@ -11,7 +11,7 @@ const points = [
 
 export default function WhyBssoc() {
   return (
-    <section className="py-20 md:py-24 px-6 md:px-12 bg-[#0f172a] border-t border-white/10 max-w-full overflow-hidden">
+    <section className="py-20 md:py-24 px-6 md:px-12 bg-black border-t border-white/10 max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-10">
           Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">BSSOC</span>

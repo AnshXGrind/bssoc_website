@@ -20,19 +20,19 @@ export default function HeroForeground() {
           {/* Transparent space above for text to peak through */}
           {/* Foreground Dark Layer */}
           <path
-            fill="#1e293b"
+            fill="#0a0a0a"
             d="M0,360 L140,290 L280,340 L430,240 L560,320 L720,230 L860,340 L1020,230 L1180,330 L1340,260 L1440,310 L1440,400 L0,400 Z"
           />
           {/* Very Front Base */}
           <path
-            fill="#0f172a"
+            fill="#000000"
             d="M0,390 L180,330 L350,380 L540,310 L720,370 L920,290 L1120,360 L1320,300 L1440,340 L1440,400 L0,400 Z"
           />
         </svg>
       </motion.div>
       
       {/* Subtle misty fog overlay to blend mountains at the bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0f172a] to-transparent opacity-80" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent opacity-80" />
     </div>
   )
 }

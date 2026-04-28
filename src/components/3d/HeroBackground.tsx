@@ -16,9 +16,9 @@ export default function HeroBackground() {
   const nearY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"])
 
   return (
-    <div ref={ref} className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#020617]">
+    <div ref={ref} className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-black">
       {/* Dark sky gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] to-[#1e293b]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#111111] to-black" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_15%,rgba(255,255,255,0.05),transparent_60%)]" />
 
       {/* Far distant peaks */}
@@ -26,8 +26,8 @@ export default function HeroBackground() {
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[42vh] md:min-h-[56vh] mountain-drift-slow" preserveAspectRatio="none">
           <defs>
             <linearGradient id="far-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#334155" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#1e293b" stopOpacity="1" />
+              <stop offset="0%" stopColor="#1f1f1f" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#000000" stopOpacity="1" />
             </linearGradient>
           </defs>
           <path
@@ -42,8 +42,8 @@ export default function HeroBackground() {
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[42vh] md:min-h-[58vh] mountain-drift-mid drop-shadow-2xl" preserveAspectRatio="none">
           <defs>
             <linearGradient id="mid-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#1e293b" />
-              <stop offset="100%" stopColor="#0f172a" />
+              <stop offset="0%" stopColor="#111111" />
+              <stop offset="100%" stopColor="#000000" />
             </linearGradient>
             <linearGradient id="snow-grad" x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="#cbd5e1" stopOpacity="1" />
@@ -78,11 +78,11 @@ export default function HeroBackground() {
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[44vh] md:min-h-[60vh] mountain-drift-fast drop-shadow-xl" preserveAspectRatio="none">
           <defs>
             <linearGradient id="near-grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#0f172a" />
-              <stop offset="100%" stopColor="#020617" />
+              <stop offset="0%" stopColor="#0a0a0a" />
+              <stop offset="100%" stopColor="#000000" />
             </linearGradient>
             <linearGradient id="near-grad2" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#020617" />
+              <stop offset="0%" stopColor="#050505" />
               <stop offset="100%" stopColor="#000000" />
             </linearGradient>
           </defs>
@@ -98,7 +98,7 @@ export default function HeroBackground() {
       </motion.div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-100" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent opacity-100" />
     </div>
   )
 }

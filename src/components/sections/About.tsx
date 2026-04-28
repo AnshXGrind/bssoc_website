@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-24 px-6 md:px-12 min-h-screen flex items-center justify-center relative bg-[#0f172a] overflow-hidden max-w-full">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-accent/5 to-[#0f172a] pointer-events-none" />
+    <section id="about" className="py-20 md:py-24 px-6 md:px-12 min-h-screen flex items-center justify-center relative bg-black overflow-hidden max-w-full">
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-accent/5 to-black pointer-events-none" />
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
         <div className="md:col-span-8">
