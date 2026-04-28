@@ -30,7 +30,7 @@ export default function CinematicLoader({ onFinish }: { onFinish: () => void }) 
       }}
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-black"
     >
-      <div className="relative h-20 w-full overflow-hidden flex items-center justify-center text-center">
+      <div className="relative h-[150px] md:h-[200px] w-full overflow-hidden flex items-center justify-center text-center">
         <AnimatePresence mode="wait">
           <motion.h1
             key={words[index]}
