@@ -16,7 +16,7 @@ export default function CinematicLoader({ onFinish }: { onFinish: () => void }) 
 
     const timeout = setTimeout(() => {
       setIndex(index + 1);
-    }, 1000); // 1 second per word for a slow, premium feel
+    }, 1500); // Slowed down to 1.5s for deeper engagement
 
     return () => clearTimeout(timeout);
   }, [index, words.length]);
@@ -54,12 +54,7 @@ export default function CinematicLoader({ onFinish }: { onFinish: () => void }) 
         </AnimatePresence>
       </div>
 
-      <motion.div 
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: index / (words.length - 1) }}
-        transition={{ duration: 1, ease: "linear" }}
-        className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent-blue origin-left"
-      />
+      {/* Progress bar removed as requested */}
     </motion.div>
   );
 }
