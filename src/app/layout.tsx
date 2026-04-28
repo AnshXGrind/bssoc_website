@@ -1,34 +1,20 @@
-"use client";
-
+import React from "react";
+import type { Metadata } from "next";
 import "./globals.css";
-import { useState, useEffect } from "react";
-import CinematicLoader from "@/components/CinematicLoader";
-import Navbar from "@/components/layout/Navbar";
+import ClientWrapper from "./ClientWrapper";
 
-export default function RootLayout({ children }: any) {
-  const [loading, setLoading] = useState(true);
+export const metadata: Metadata = {
+  title: "BoyScript Summer of Code 2026",
+  description: "Official website for BoyScript Summer of Code 2026",
+};
 
-  useEffect(() => {
-    const seen = sessionStorage.getItem("bssoc_loader");
-    if (seen) setLoading(false);
-  }, []);
-
-  const handleFinish = () => {
-    sessionStorage.setItem("bssoc_loader", "true");
-    setLoading(false);
-  };
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="bg-black text-white">
-        {loading && <CinematicLoader onFinish={handleFinish} />}
-
-        {!loading && (
-          <>
-            <Navbar />
-            {children}
-          </>
-        )}
+        <ClientWrapper>
+          {children}
+        </ClientWrapper>
       </body>
     </html>
   );
