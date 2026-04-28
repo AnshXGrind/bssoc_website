@@ -10,10 +10,10 @@ export default function HeroBackground() {
     offset: ["start start", "end start"],
   })
 
-  // Layered depth to mimic real Himalayan atmospheric perspective.
-  const farY = useTransform(scrollYProgress, [0, 1], ["0%", "32%"])
-  const midY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"])
-  const nearY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"])
+  // Increased layered depth to make mountains highly scrollable/move dynamically when mouse scrolling
+  const farY = useTransform(scrollYProgress, [0, 1], ["0%", "80%"])
+  const midY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
+  const nearY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"])
 
   return (
     <div ref={ref} className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#020617]">

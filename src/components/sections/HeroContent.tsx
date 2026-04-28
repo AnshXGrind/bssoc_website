@@ -45,12 +45,12 @@ export default function HeroContent() {
         className="relative z-10 w-full flex flex-col items-center justify-center pointer-events-auto"
       >
         <motion.h1
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl md:text-7xl lg:text-[100px] font-black tracking-tighter leading-[1.05] text-white text-center max-w-6xl px-4"
+          className="text-[18vw] md:text-[22vw] font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-white via-white/80 to-white/10 drop-shadow-[0_0_40px_rgba(255,255,255,0.15)] select-none"
         >
-          BoyScript Summer of Code
+          BSSOC
         </motion.h1>
       </motion.div>
 
