@@ -15,8 +15,8 @@ const tracks = [
     id: "02",
     title: "Web Dev",
     description: "Create production-ready applications.",
-    icon: <Code className="w-12 h-12 text-accent-blue" />,
-    color: "#00E5FF",
+    icon: <Code className="w-12 h-12 text-white" />,
+    color: "#FFFFFF",
   },
   {
     id: "03",

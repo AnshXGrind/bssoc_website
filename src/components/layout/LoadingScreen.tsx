@@ -58,7 +58,7 @@ export default function LoadingScreen() {
               
               // Last word "BSSOC" gets a special gradient
               const textClasses = word === "BSSOC" 
-                ? "text-transparent bg-clip-text bg-gradient-to-r from-[#94a3b8] to-[#00E5FF]" 
+                ? "text-transparent bg-clip-text bg-gradient-to-r from-white to-[#94a3b8]" 
                 : "text-white";
 
               return (

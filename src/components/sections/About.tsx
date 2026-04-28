@@ -9,7 +9,7 @@ export default function About() {
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
         <div className="md:col-span-8">
-          <p className="text-accent-blue font-mono text-sm tracking-widest uppercase mb-8">What is BSSOC?</p>
+          <p className="text-accent font-mono text-sm tracking-widest uppercase mb-8">What is BSSOC?</p>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight uppercase">
             BUILDING REAL THINGS. NO DISTRACTIONS.
           </h2>

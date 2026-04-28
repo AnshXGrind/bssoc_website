@@ -31,7 +31,7 @@ export default function CTA() {
             <Link 
               href="/how-to-join"
               data-hover="true"
-              className="group relative inline-flex items-center justify-center px-12 py-6 font-bold text-white transition-all duration-300 ease-in-out bg-accent rounded-full hover:bg-[#00E5FF] overflow-hidden shadow-[0_0_40px_rgba(255,77,0,0.4)] hover:shadow-[0_0_60px_rgba(0,229,255,0.6)] cursor-pointer"
+              className="group relative inline-flex items-center justify-center px-12 py-6 font-bold text-white transition-all duration-300 ease-in-out bg-accent rounded-full hover:bg-[#ffffff] hover:text-[#0f172a] overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.6)] cursor-pointer"
               style={{ pointerEvents: 'auto' }}
             >
               <motion.span

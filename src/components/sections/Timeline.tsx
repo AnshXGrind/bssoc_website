@@ -37,12 +37,12 @@ export default function Timeline() {
 
                {/* Desktop Timeline Dot */}
                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#0f172a] border-2 border-accent hidden md:flex justify-center items-center">
-                  <div className="w-1.5 h-1.5 bg-accent-blue rounded-full shadow-[0_0_10px_#00E5FF]" />
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full shadow-[0_0_10px_#ffffff]" />
                </div>
 
                <div className={`w-full md:w-[45%] glass-card p-8 group relative overflow-hidden ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                   <div className="text-accent/30 font-mono text-xl md:text-3xl font-bold mb-2 uppercase group-hover:text-accent transition-colors duration-300">{phase.id}.</div>
-                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-wide mb-2 text-white group-hover:text-accent-blue transition-colors duration-300">{phase.title}</h3>
+                  <h3 className="text-2xl md:text-3xl font-black uppercase tracking-wide mb-2 text-white group-hover:text-accent transition-colors duration-300">{phase.title}</h3>
                   <div className="text-xs font-mono tracking-widest uppercase bg-white/5 inline-block px-3 py-1 rounded-full mb-4 text-white/50">{phase.date}</div>
                   <p className="text-white/60 font-mono text-sm leading-relaxed">{phase.desc}</p>
                </div>
