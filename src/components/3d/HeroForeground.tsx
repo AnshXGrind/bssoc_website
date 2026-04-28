@@ -16,7 +16,7 @@ export default function HeroForeground() {
   return (
     <div ref={ref} className="absolute inset-0 z-[50] pointer-events-none overflow-hidden">
       <motion.div style={{ y }} className="absolute bottom-0 left-0 right-0 w-full flex flex-col items-center">
-        <svg viewBox="0 0 1440 400" className="w-full h-auto min-h-[40vh] md:min-h-[60vh] object-cover object-bottom" preserveAspectRatio="none">
+        <svg viewBox="0 0 1440 400" className="w-full h-auto min-h-[45vh] md:min-h-[65vh] object-cover object-bottom drop-shadow-2xl" preserveAspectRatio="none">
           {/* Transparent space above for text to peak through */}
           {/* Foreground Dark Layer */}
           <path
