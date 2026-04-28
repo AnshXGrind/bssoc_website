@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import CinematicLoader from "@/components/CinematicLoader";
 import Navbar from "@/components/layout/Navbar";
 
@@ -19,7 +20,12 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
 
   return (
     <>
-      {loading && <CinematicLoader onFinish={handleFinish} />}
+      <AnimatePresence mode="wait">
+        {loading && (
+          <CinematicLoader key="loader" onFinish={handleFinish} />
+        )}
+      </AnimatePresence>
+
       {!loading && (
         <>
           <Navbar />
