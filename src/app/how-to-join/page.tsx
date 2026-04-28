@@ -20,41 +20,56 @@ const joinOptions = [
 export default function HowToJoinPage() {
   return (
     <main className="page-shell">
-      <section className="page-hero-section">
-        <div className="max-w-7xl mx-auto">
-          <motion.div {...reveal}>
-            <div className="page-pill">
-              Join BSSOC
-            </div>
-            <h1 className="page-title mb-8">
-              How to <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Join</span>
-            </h1>
-            <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white/75 font-mono mb-10 text-base md:text-lg">
-              <li className="glass-card p-5">Developers stuck in tutorial loop.</li>
-              <li className="glass-card p-5">People serious about building.</li>
-              <li className="glass-card p-5">Anyone who wants real experience.</li>
-            </ul>
-            <p className="text-white/70 font-mono text-lg max-w-3xl mb-2">Ready to build something real?</p>
-            <p className="text-white/70 font-mono text-lg max-w-3xl mb-10">Stop learning. Start building.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {joinOptions.map((option) => (
-                <a
-                  key={option.label}
-                  href={option.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`inline-flex items-center justify-center px-8 py-4 rounded-full font-mono uppercase tracking-widest text-sm transition duration-300 ${
-                    option.primary
-                      ? "bg-accent text-white hover:brightness-110"
-                      : "border border-white/20 text-white/90 hover:bg-white/10"
-                  }`}
-                >
-                  Join as {option.label}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+      <div className="palmer-bar">
+        <span>JOIN BSSOC</span>
+        <span className="hidden md:inline-block">BECOME A MEMBER</span>
+        <span>CURRENT REGISTRATION</span>
+      </div>
+
+      <section className="page-hero-section pb-0">
+        <motion.div {...reveal} className="w-full">
+          <h1 className="palmer-huge-title mb-16 text-white">
+            HOW TO<br />
+            <span className="text-white/60">JOIN.</span>
+          </h1>
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-white/20 text-white/80 font-mono text-lg uppercase">
+            <li className="p-8 border-b md:border-b-0 md:border-r border-white/20">Developers stuck in tutorial loop.</li>
+            <li className="p-8 border-b md:border-b-0 md:border-r border-white/20">People serious about building.</li>
+            <li className="p-8">Anyone who wants real experience.</li>
+          </ul>
+        </motion.div>
+      </section>
+
+      <section className="page-alt-section pt-16 border-t-0">
+        <motion.div {...reveal} className="w-full">
+          <div className="palmer-bar mb-16 border-t-0">
+             <span>APPLICATION</span>
+             <span>CHOOSE ROLE</span>
+          </div>
+          <div className="text-right text-white/60 font-mono uppercase text-xl md:text-2xl mb-12">
+             READY TO BUILD SOMETHING REAL? <br/>
+             STOP LEARNING. START BUILDING.
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-white/20 font-mono uppercase">
+            {joinOptions.map((option, idx) => (
+              <a
+                key={option.label}
+                href={option.href}
+                target="_blank"
+                rel="noreferrer"
+                className={`p-10 md:p-12 flex flex-col justify-between aspect-[4/3] transition-colors duration-300 ${
+                  idx !== 2 ? "border-b md:border-b-0 md:border-r border-white/20" : ""
+                } hover:bg-white hover:text-black group text-white`}
+              >
+                <div className="flex justify-between items-start w-full">
+                  <span className="text-white/40 group-hover:text-black/40 text-sm">0{idx + 1}</span>
+                  <span className="text-4xl group-hover:translate-x-2 transition-transform">→</span>
+                </div>
+                <span className="text-2xl md:text-3xl font-bold mt-auto">{option.label}</span>
+              </a>
+            ))}
+          </div>
+        </motion.div>
       </section>
     </main>
   );

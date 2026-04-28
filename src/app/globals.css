@@ -64,31 +64,39 @@ body {
 }
 
 .glass-card {
-  @apply bg-white/5 border border-white/10 rounded-2xl transition-all duration-300;
+  @apply bg-black border border-white/20 rounded-none transition-all duration-300;
 }
 
 .glass-card:hover {
-  @apply scale-[1.05] rotate-1;
+  @apply bg-white/5;
 }
 
 .page-shell {
-  @apply pt-28 md:pt-32 pb-16 max-w-full overflow-hidden;
+  @apply pt-28 md:pt-32 pb-16 max-w-full overflow-hidden bg-black text-white min-h-screen;
 }
 
 .page-hero-section {
-  @apply px-6 md:px-12 py-20 bg-[#0f172a];
+  @apply px-6 md:px-12 py-20 bg-black;
 }
 
 .page-alt-section {
-  @apply px-6 md:px-12 py-20 bg-[#1e293b] border-y border-white/10;
+  @apply px-6 md:px-12 py-20 bg-black border-y border-white/20;
 }
 
 .page-pill {
-  @apply inline-block border border-accent/30 bg-accent/10 text-accent rounded-full px-4 py-1.5 text-xs font-mono tracking-widest uppercase mb-8;
+  @apply inline-block border border-white/30 text-white rounded-full px-5 py-2 text-xs font-mono tracking-widest uppercase mb-8;
 }
 
 .page-title {
-  @apply text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-none;
+  @apply text-5xl md:text-7xl lg:text-[100px] font-medium tracking-tight leading-[1.05];
+}
+
+.palmer-huge-title {
+  @apply text-[80px] md:text-[140px] lg:text-[200px] font-bold uppercase tracking-tighter leading-none;
+}
+
+.palmer-bar {
+  @apply border-y border-white/20 w-full py-3 flex justify-between items-center text-xs md:text-sm font-mono text-white/70;
 }
 
 .noise-overlay {

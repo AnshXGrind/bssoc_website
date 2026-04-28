@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function LoadingScreen() {
   const words = ["BOY", "SCRIPT", "SUMMER", "OF", "CODE", "BSSOC"];
-  const STEP_MS = 600; // Slower, readable pace
-  const EXIT_MS = 800; // Pause on last word before exit
+  const STEP_MS = 1000; // Slower, readable pace
+  const EXIT_MS = 1500; // Longer pause on the last word before the fade out begins
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
@@ -33,7 +33,7 @@ export default function LoadingScreen() {
     const finishTimer = setTimeout(() => {
       setIsFullyComplete(true);
       document.body.style.overflow = "auto";
-    }, words.length * STEP_MS + EXIT_MS + 800);
+    }, words.length * STEP_MS + EXIT_MS + 1000);
 
     return () => {
       clearInterval(wordTimer);
@@ -47,7 +47,7 @@ export default function LoadingScreen() {
     <AnimatePresence>
       {!isFullyComplete && (
         <motion.div
-          animate={isExiting ? { y: "-100%", opacity: 0 } : { y: 0, opacity: 1 }}
+          animate={isExiting ? { y: "-100%" } : { y: 0 }}
           transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-[#05080f] shadow-[0_20px_50px_rgba(0,0,0,0.5)] text-white origin-bottom"
         >
@@ -66,10 +66,10 @@ export default function LoadingScreen() {
                   key={word}
                   className={`absolute inset-x-0 mx-auto top-1/2 -translate-y-1/2 text-5xl md:text-7xl lg:text-8xl font-black tracking-wider uppercase ${textClasses}`}
                   style={{
-                    opacity: isExiting ? 0 : isActive ? 1 : 0,
+                    opacity: isActive ? 1 : 0,
                     filter: isActive ? "blur(0px)" : "blur(6px)",
                     transform: isExiting
-                      ? "translateY(12px) scale(0.95)"
+                      ? "translateY(0px) scale(0.95)"
                       : isActive
                       ? "translateY(0px) scale(1)"
                       : wasShown
