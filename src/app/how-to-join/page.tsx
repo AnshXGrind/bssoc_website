@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 const reveal = {
   initial: { opacity: 0, y: 30 },
@@ -32,6 +32,13 @@ const roles = [
     benefits: ["Leadership Role", "Impact on Major Projects", "Premium Perks"],
     href: "https://form.typeform.com/to/GzKVGFkr?role=project-admin"
   }
+];
+
+const faqs = [
+  { q: "Is BSSOC beginner friendly?", a: "Yes. While we look for core programming knowledge, we have projects catering to all skill levels." },
+  { q: "Do I get paid for participating?", a: "BSSOC is an open-source program focused on learning and experience. We provide swags and certificates, but no direct stipend." },
+  { q: "How many hours per week do I need?", a: "We recommend at least 10-15 hours per week to make meaningful progress on your chosen projects." },
+  { q: "Can I apply for multiple roles?", a: "You can apply for both Contributor and Project Admin, but you'll be selected for the one that best fits your profile." },
 ];
 
 export default function HowToJoinPage() {
@@ -96,7 +103,27 @@ export default function HowToJoinPage() {
         </motion.div>
       </section>
 
-      <section className="page-alt-section py-32 border-t border-white/5 mt-10">
+      <section className="page-alt-section py-24 pb-32">
+        <motion.div {...reveal} className="w-full">
+          <div className="palmer-bar mb-16 border-t-0">
+             <span>GUIDE</span>
+             <span>FREQUENTLY ASKED QUESTIONS</span>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+             {faqs.map((faq) => (
+               <div key={faq.q} className="border-b border-white/5 pb-8">
+                  <h4 className="text-white text-lg font-black uppercase tracking-tighter mb-4 flex items-start gap-3">
+                    <span className="text-accent">?</span> {faq.q}
+                  </h4>
+                  <p className="text-white/40 font-mono text-[11px] uppercase leading-relaxed">{faq.a}</p>
+               </div>
+             ))}
+          </div>
+        </motion.div>
+      </section>
+
+      <section className="page-hero-section py-32 border-t border-white/5">
         <motion.div {...reveal} className="w-full max-w-4xl mx-auto text-center">
           <div className="inline-block border border-accent/20 bg-accent/5 text-accent rounded-full px-6 py-2 text-[10px] font-mono tracking-widest uppercase mb-12">
             Timeline Update

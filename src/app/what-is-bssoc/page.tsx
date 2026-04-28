@@ -71,6 +71,33 @@ export default function WhatIsBssocPage() {
         </motion.div>
       </section>
 
+      <section className="page-hero-section py-24 pb-32">
+        <motion.div {...reveal} className="w-full">
+          <div className="palmer-bar mb-16 border-t-0">
+             <span>WHAT YOU GAIN</span>
+             <span>THE BENEFITS</span>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="flex flex-col gap-6">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-xl font-black italic">01</div>
+                <h3 className="text-white text-2xl font-black uppercase tracking-tighter">Technical Depth</h3>
+                <p className="text-white/40 font-mono text-sm uppercase leading-relaxed">Exposure to complex codebases, design patterns, and systemic thinking that academic projects rarely touch.</p>
+            </div>
+            <div className="flex flex-col gap-6">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-xl font-black italic">02</div>
+                <h3 className="text-white text-2xl font-black uppercase tracking-tighter">Network Access</h3>
+                <p className="text-white/40 font-mono text-sm uppercase leading-relaxed">Connect with mentors and maintainers from across the globe, opening doors to referrals and internships.</p>
+            </div>
+            <div className="flex flex-col gap-6">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-xl font-black italic">03</div>
+                <h3 className="text-white text-2xl font-black uppercase tracking-tighter">Open Portfolio</h3>
+                <p className="text-white/40 font-mono text-sm uppercase leading-relaxed">Your contributions are public and permanent. A GitHub profile with BSSOC PRs is the strongest resume you can have.</p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       <section className="page-hero-section py-32 border-t border-white/5">
         <motion.div {...reveal} className="w-full text-center max-w-5xl mx-auto">
           <h2 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-12">
