@@ -46,7 +46,7 @@ export default function Tracks() {
           className="mb-24 flex flex-col md:flex-row justify-between md:items-end gap-6"
         >
           <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter">
-            Program <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Tracks</span>
+            Program <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Tracks</span>
           </h2>
           <p className="text-white/50 font-mono max-w-sm uppercase text-sm tracking-widest leading-relaxed">
             Pick your track. Execute with structure. Ship real outcomes.

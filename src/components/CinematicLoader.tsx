@@ -43,7 +43,7 @@ export default function CinematicLoader({ onFinish }: { onFinish: () => void }) 
             }}
             className="absolute text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter uppercase"
             style={{
-                background: words[idx] === "BSSOC" ? "linear-gradient(to right, white, #94a3b8)" : "none",
+                background: words[index] === "BSSOC" ? "linear-gradient(to right, white, #94a3b8)" : "none",
                 WebkitBackgroundClip: words[index] === "BSSOC" ? "text" : "none",
                 WebkitTextFillColor: words[index] === "BSSOC" ? "transparent" : "white",
                 color: "white"

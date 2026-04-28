@@ -101,7 +101,7 @@ export default function WhatIsBssocPage() {
       <section className="page-hero-section py-32 border-t border-white/5">
         <motion.div {...reveal} className="w-full text-center max-w-5xl mx-auto">
           <h2 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-12">
-            Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Future.</span>
+            Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Future.</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="glass-card p-6 border-white/5">

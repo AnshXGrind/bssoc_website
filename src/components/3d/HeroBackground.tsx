@@ -16,18 +16,18 @@ export default function HeroBackground() {
   const nearY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"])
 
   return (
-    <div ref={ref} className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#2D82FF]">
-      {/* Bright blue sky gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1C6DD0] to-[#519CFF]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_15%,rgba(255,255,255,0.2),transparent_60%)]" />
+    <div ref={ref} className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#020617]">
+      {/* Dark sky gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] to-[#1e293b]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_15%,rgba(255,255,255,0.05),transparent_60%)]" />
 
       {/* Far distant peaks */}
       <motion.div style={{ y: farY }} className="absolute bottom-0 left-0 right-0 w-full opacity-70">
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[42vh] md:min-h-[56vh] mountain-drift-slow" preserveAspectRatio="none">
           <defs>
             <linearGradient id="far-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#4A84D6" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#1C6DD0" stopOpacity="1" />
+              <stop offset="0%" stopColor="#334155" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#1e293b" stopOpacity="1" />
             </linearGradient>
           </defs>
           <path
@@ -42,12 +42,12 @@ export default function HeroBackground() {
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[42vh] md:min-h-[58vh] mountain-drift-mid drop-shadow-2xl" preserveAspectRatio="none">
           <defs>
             <linearGradient id="mid-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#255A9B" />
-              <stop offset="100%" stopColor="#123B6D" />
+              <stop offset="0%" stopColor="#1e293b" />
+              <stop offset="100%" stopColor="#0f172a" />
             </linearGradient>
             <linearGradient id="snow-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="1" />
-              <stop offset="100%" stopColor="#E2E8F0" stopOpacity="0.8" />
+              <stop offset="0%" stopColor="#cbd5e1" stopOpacity="1" />
+              <stop offset="100%" stopColor="#94a3b8" stopOpacity="0.8" />
             </linearGradient>
           </defs>
           {/* Base rock/shadow of the main range */}
@@ -78,12 +78,12 @@ export default function HeroBackground() {
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[44vh] md:min-h-[60vh] mountain-drift-fast drop-shadow-xl" preserveAspectRatio="none">
           <defs>
             <linearGradient id="near-grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#1C4066" />
-              <stop offset="100%" stopColor="#0B1A30" />
+              <stop offset="0%" stopColor="#0f172a" />
+              <stop offset="100%" stopColor="#020617" />
             </linearGradient>
             <linearGradient id="near-grad2" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#0F2445" />
-              <stop offset="100%" stopColor="#050C17" />
+              <stop offset="0%" stopColor="#020617" />
+              <stop offset="100%" stopColor="#000000" />
             </linearGradient>
           </defs>
           <path

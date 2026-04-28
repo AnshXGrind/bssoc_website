@@ -25,7 +25,7 @@ export default function CTA() {
           </div>
           
           <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none mb-12">
-            Apply <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Now</span>
+            Apply <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Now</span>
           </h2>
           <Magnetic strength={0.3}>
             <Link 

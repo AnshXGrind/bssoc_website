@@ -16,7 +16,7 @@ export default function Timeline() {
     <section id="timeline" className="py-20 md:py-24 px-6 md:px-12 bg-[#1e293b] relative border-t border-accent/20 max-w-full overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-24 text-center">
-          How It <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Works</span>
+          How It <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Works</span>
         </h2>
 
         <div className="relative border-l border-white/10 md:border-none">

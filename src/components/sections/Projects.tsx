@@ -26,7 +26,7 @@ const projects = [
     title: "Next.js SaaS Boilerplate",
     track: "Full Stack",
     url: "#",
-    color: "from-accent-blue",
+    color: "from-accent",
   },
 ]
 
@@ -42,7 +42,7 @@ export default function Projects() {
           className="mb-24 flex flex-col md:flex-row justify-between md:items-end gap-6"
         >
           <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter">
-            Real <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">Projects</span>
+            Real <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Projects</span>
           </h2>
           <p className="text-white/50 font-mono max-w-sm uppercase text-sm tracking-widest leading-relaxed">
             We don&apos;t toy around. View previous high-impact open source repositories.

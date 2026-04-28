@@ -14,7 +14,7 @@ export default function WhyBssoc() {
     <section className="py-20 md:py-24 px-6 md:px-12 bg-[#0f172a] border-t border-white/10 max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-10">
-          Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-blue">BSSOC</span>
+          Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">BSSOC</span>
         </h2>
         <p className="text-white/70 font-mono mb-8">This program is execution-focused.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
