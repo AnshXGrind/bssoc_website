@@ -48,9 +48,9 @@ export default function HeroContent() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[15vw] md:text-[20vw] font-black tracking-tighter leading-none text-white"
+          className="text-5xl md:text-7xl lg:text-[100px] font-black tracking-tighter leading-[1.05] text-white text-center max-w-6xl px-4"
         >
-          BSSOC
+          BoyScript Summer of Code
         </motion.h1>
       </motion.div>
 
