@@ -1,75 +1,60 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function CinematicLoader({ onFinish }: any) {
-  const words = ["BOY", "SCRIPT", "SUMMER", "OF", "CODE"];
-  const STEP_MS = 800;
-  const EXIT_MS = 1000;
+export default function CinematicLoader({ onFinish }: { onFinish: () => void }) {
+  const words = ["BOY", "SCRIPT", "SUMMER", "OF", "CODE", "BSSOC"];
+  const [index, setIndex] = useState(0);
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
-    const wordTimer = setInterval(() => {
-      setActiveIndex((prev) => {
-        if (prev >= words.length - 1) {
-          clearInterval(wordTimer);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, STEP_MS);
+    if (index === words.length) {
+      const finishTimeout = setTimeout(onFinish, 500);
+      return () => clearTimeout(finishTimeout);
+    }
 
-    const exitTimer = setTimeout(() => {
-      setIsExiting(true);
-    }, words.length * STEP_MS + 260);
-    const finishTimer = setTimeout(onFinish, words.length * STEP_MS + EXIT_MS + 260);
+    const timeout = setTimeout(() => {
+      setIndex(index + 1);
+    }, 1500); // Slowed down to 1.5s for deeper engagement
 
-    return () => {
-      clearInterval(wordTimer);
-      clearTimeout(exitTimer);
-      clearTimeout(finishTimer);
-    };
-  }, [onFinish, words.length]);
+    return () => clearTimeout(timeout);
+  }, [index, words.length]);
 
   return (
-    <div
-      className="fixed inset-0 z-[9999] bg-black"
-      style={{
-        opacity: isExiting ? 0 : 1,
-        transition: "opacity 800ms cubic-bezier(0.16, 1, 0.3, 1)",
+    <motion.div
+      initial={{ opacity: 1 }}
+      exit={{ 
+        y: "-100%",
+        transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] } 
       }}
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black"
     >
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-full max-w-[900px] px-6 text-center">
-          {words.map((word, idx) => {
-            const isActive = idx === activeIndex;
-            const wasShown = idx < activeIndex;
-            return (
-              <h1
-                key={word}
-                className="absolute inset-x-0 mx-auto text-white text-5xl md:text-7xl lg:text-8xl font-black tracking-wider uppercase"
-                style={{
-                  opacity: isExiting ? 0 : isActive ? 1 : 0,
-                  filter: isActive ? "blur(0px)" : "blur(6px)",
-                  transform: isExiting
-                    ? "translateY(-12px) scale(1.02)"
-                    : isActive
-                    ? "translateY(0px) scale(1)"
-                    : wasShown
-                    ? "translateY(-18px) scale(1.03)"
-                    : "translateY(18px) scale(0.97)",
-                  transition:
-                    "opacity 380ms cubic-bezier(0.22, 1, 0.36, 1), transform 560ms cubic-bezier(0.22, 1, 0.36, 1), filter 380ms ease",
-                }}
-              >
-                {word}
-              </h1>
-            );
-          })}
-        </div>
+      <div className="relative h-20 w-full overflow-hidden flex items-center justify-center text-center">
+        <AnimatePresence mode="wait">
+          <motion.h1
+            key={words[index]}
+            initial={{ y: "100%", opacity: 0 }}
+            animate={{ y: "0%", opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.22, 1, 0.36, 1] 
+            }}
+            className="absolute text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter uppercase"
+            style={{
+                background: words[index] === "BSSOC" ? "linear-gradient(to right, #94a3b8, #00E5FF)" : "none",
+                WebkitBackgroundClip: words[index] === "BSSOC" ? "text" : "none",
+                WebkitTextFillColor: words[index] === "BSSOC" ? "transparent" : "white",
+                color: "white"
+            }}
+          >
+            {words[index] || ""}
+          </motion.h1>
+        </AnimatePresence>
       </div>
-    </div>
+
+      {/* Progress bar removed as requested */}
+    </motion.div>
   );
 }
