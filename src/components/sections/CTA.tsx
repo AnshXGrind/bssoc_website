@@ -10,8 +10,8 @@ export default function CTA() {
   const containerRef = useRef<HTMLDivElement>(null)
   
   return (
-    <section ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-[#0f172a] relative z-10 overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/20 via-[#0f172a] to-[#0f172a]" />
+    <section ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-black relative z-10 overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/10 via-black to-black" />
       
       <div className="max-w-4xl mx-auto relative z-[100] text-center">
         <motion.div 

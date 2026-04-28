@@ -13,7 +13,7 @@ const phases = [
 
 export default function Timeline() {
   return (
-    <section id="timeline" className="py-20 md:py-24 px-6 md:px-12 bg-[#1e293b] relative border-t border-accent/20 max-w-full overflow-hidden">
+    <section id="timeline" className="py-20 md:py-24 px-6 md:px-12 bg-black relative border-t border-accent/20 max-w-full overflow-hidden">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-24 text-center">
           How It <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Works</span>
@@ -36,7 +36,7 @@ export default function Timeline() {
                <div className="absolute left-[-5px] top-4 w-2.5 h-2.5 rounded-full bg-accent md:hidden" />
 
                {/* Desktop Timeline Dot */}
-               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#0f172a] border-2 border-accent hidden md:flex justify-center items-center">
+               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-black border-2 border-accent hidden md:flex justify-center items-center">
                   <div className="w-1.5 h-1.5 bg-accent rounded-full shadow-[0_0_10px_#ffffff]" />
                </div>
 

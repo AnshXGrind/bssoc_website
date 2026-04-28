@@ -17,9 +17,10 @@ export default function HeroBackground() {
 
   return (
     <div ref={ref} className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-black">
-      {/* Dark sky gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#111111] to-black" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_15%,rgba(255,255,255,0.05),transparent_60%)]" />
+      {/* Dark sky gradient with enhanced atmospheric glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_10%,#3b3b3b_0%,#111111_40%,#000000_80%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_15%,rgba(255,255,255,0.08),transparent_60%)]" />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-white opacity-[0.012] blur-[120px] pointer-events-none" />
 
       {/* Far distant peaks */}
       <motion.div style={{ y: farY }} className="absolute bottom-0 left-0 right-0 w-full opacity-70">
@@ -46,8 +47,9 @@ export default function HeroBackground() {
               <stop offset="100%" stopColor="#000000" />
             </linearGradient>
             <linearGradient id="snow-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#cbd5e1" stopOpacity="1" />
-              <stop offset="100%" stopColor="#94a3b8" stopOpacity="0.8" />
+              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.9" />
+              <stop offset="60%" stopColor="#a3a3a3" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#222222" stopOpacity="0.0" />
             </linearGradient>
           </defs>
           {/* Base rock/shadow of the main range */}

@@ -36,7 +36,7 @@ const tracks = [
 
 export default function Tracks() {
   return (
-    <section id="tracks" className="py-20 md:py-24 px-6 md:px-12 bg-[#0f172a] relative z-10 max-w-full overflow-hidden">
+    <section id="tracks" className="py-20 md:py-24 px-6 md:px-12 bg-black relative z-10 max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-20">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
