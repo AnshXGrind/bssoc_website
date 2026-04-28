@@ -1,73 +1,117 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 const reveal = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const },
+  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
 };
 
-const TYPEFORM_BASE_URL = process.env.NEXT_PUBLIC_TYPEFORM_URL || "https://form.typeform.com/to/GzKVGFkr";
-
-const joinOptions = [
-  { label: "Contributor", href: `${TYPEFORM_BASE_URL}?role=contributor`, primary: true },
-  { label: "Mentor", href: `${TYPEFORM_BASE_URL}?role=mentor`, primary: false },
-  { label: "Project Admin", href: `${TYPEFORM_BASE_URL}?role=project-admin`, primary: false },
+const roles = [
+  {
+    title: "Contributor",
+    desc: "Perfect for students and developers who want to dive into open source.",
+    requirements: ["Basic Git knowledge", "Core language proficiency", "Passion for building"],
+    benefits: ["Mentorship", "Project Certificate", "Exclusive Swag"],
+    href: "https://form.typeform.com/to/GzKVGFkr?role=contributor"
+  },
+  {
+    title: "Mentor",
+    desc: "For experienced professionals who want to guide the next generation of builders.",
+    requirements: ["3+ years experience", "Project maintainer experience", "Good communication"],
+    benefits: ["Personal Branding", "Network Access", "Mentor Recognition"],
+    href: "https://form.typeform.com/to/GzKVGFkr?role=mentor"
+  },
+  {
+    title: "Project Admin",
+    desc: "Oversee entire repositories and manage the contributor workflow.",
+    requirements: ["Deep technical expertise", "Project lead experience", "Strong coordination skills"],
+    benefits: ["Leadership Role", "Impact on Major Projects", "Premium Perks"],
+    href: "https://form.typeform.com/to/GzKVGFkr?role=project-admin"
+  }
 ];
 
 export default function HowToJoinPage() {
   return (
     <main className="page-shell">
       <div className="palmer-bar">
-        <span>JOIN BSSOC</span>
-        <span className="hidden md:inline-block">BECOME A MEMBER</span>
-        <span>CURRENT REGISTRATION</span>
+        <span>ONBOARDING</span>
+        <span className="hidden md:inline-block">BECOME A PART OF BSSOC</span>
+        <span>APPLICATIONS OPEN</span>
       </div>
 
-      <section className="page-hero-section pb-0">
+      <section className="page-hero-section">
         <motion.div {...reveal} className="w-full">
-          <h1 className="palmer-huge-title mb-16 text-white">
-            HOW TO<br />
-            <span className="text-white/60">JOIN.</span>
+          <h1 className="palmer-huge-title mb-16 text-white text-center md:text-left">
+            JOIN THE<br />
+            <span className="text-white/60">SQUAD.</span>
           </h1>
-          <ul className="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-white/20 text-white/80 font-mono text-lg uppercase">
-            <li className="p-8 border-b md:border-b-0 md:border-r border-white/20">Developers stuck in tutorial loop.</li>
-            <li className="p-8 border-b md:border-b-0 md:border-r border-white/20">People serious about building.</li>
-            <li className="p-8">Anyone who wants real experience.</li>
-          </ul>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {roles.map((role) => (
+              <div key={role.title} className="glass-card p-10 flex flex-col justify-between border-white/5 hover:border-accent/30 transition-all duration-500">
+                <div>
+                  <h3 className="text-white text-3xl font-black uppercase tracking-tighter mb-6">{role.title}</h3>
+                  <p className="text-white/50 font-mono text-sm uppercase mb-10 leading-relaxed">{role.desc}</p>
+                  
+                  <div className="space-y-8 mb-12">
+                    <div>
+                      <h4 className="text-accent text-[10px] font-mono tracking-widest uppercase mb-4">Requirements</h4>
+                      <ul className="space-y-2">
+                        {role.requirements.map(req => (
+                          <li key={req} className="text-white/70 font-mono text-[11px] uppercase flex items-center gap-2">
+                            <span className="w-1 h-1 bg-accent rounded-full" /> {req}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="text-accent text-[10px] font-mono tracking-widest uppercase mb-4">Benefits</h4>
+                      <ul className="space-y-2">
+                        {role.benefits.map(benefit => (
+                          <li key={benefit} className="text-white/70 font-mono text-[11px] uppercase flex items-center gap-2">
+                             <span className="w-1 h-1 bg-white/20 rounded-full" /> {benefit}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <a 
+                  href={role.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center justify-between border border-white/20 px-8 py-5 rounded-full text-white font-mono text-[10px] tracking-widest uppercase hover:bg-accent hover:border-accent hover:text-white transition-all duration-300"
+                >
+                  Apply for {role.title}
+                  <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform" />
+                </a>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </section>
 
-      <section className="page-alt-section pt-16 border-t-0">
-        <motion.div {...reveal} className="w-full">
-          <div className="palmer-bar mb-16 border-t-0">
-             <span>APPLICATION</span>
-             <span>CHOOSE ROLE</span>
+      <section className="page-alt-section py-32 border-t border-white/5 mt-10">
+        <motion.div {...reveal} className="w-full max-w-4xl mx-auto text-center">
+          <div className="inline-block border border-accent/20 bg-accent/5 text-accent rounded-full px-6 py-2 text-[10px] font-mono tracking-widest uppercase mb-12">
+            Timeline Update
           </div>
-          <div className="text-right text-white/60 font-mono uppercase text-xl md:text-2xl mb-12">
-             READY TO BUILD SOMETHING REAL? <br/>
-             STOP LEARNING. START BUILDING.
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-white/20 font-mono uppercase">
-            {joinOptions.map((option, idx) => (
-              <a
-                key={option.label}
-                href={option.href}
-                target="_blank"
-                rel="noreferrer"
-                className={`p-10 md:p-12 flex flex-col justify-between aspect-[4/3] transition-colors duration-300 ${
-                  idx !== 2 ? "border-b md:border-b-0 md:border-r border-white/20" : ""
-                } hover:bg-white hover:text-black group text-white`}
-              >
-                <div className="flex justify-between items-start w-full">
-                  <span className="text-white/40 group-hover:text-black/40 text-sm">0{idx + 1}</span>
-                  <span className="text-4xl group-hover:translate-x-2 transition-transform">→</span>
-                </div>
-                <span className="text-2xl md:text-3xl font-bold mt-auto">{option.label}</span>
-              </a>
-            ))}
+          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-8 leading-none">
+            Don't Wait for the <br/>
+            <span className="text-white/30 italic">Perfect Moment.</span>
+          </h2>
+          <p className="text-white/40 font-mono text-lg uppercase mb-16 leading-relaxed">
+            Applications are reviewed on a rolling basis. The sooner you join, the more time you have to explore the repositories.
+          </p>
+          <div className="bg-white/5 p-1 px-1 rounded-full inline-flex border border-white/10">
+             <div className="bg-accent text-white px-8 py-3 rounded-full text-[10px] font-mono uppercase tracking-widest">
+                Priority: 2026 Batch
+             </div>
           </div>
         </motion.div>
       </section>
