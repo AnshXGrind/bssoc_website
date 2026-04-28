@@ -45,10 +45,10 @@ export default function HeroContent() {
         className="relative z-10 w-full flex flex-col items-center justify-center pointer-events-auto"
       >
         <motion.h1
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          initial={{ opacity: 0, scale: 0.9, y: 40 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[18vw] md:text-[22vw] font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-white via-white/80 to-white/10 drop-shadow-[0_0_40px_rgba(255,255,255,0.15)] select-none"
+          className="text-[12vw] md:text-[15vw] font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-white via-white/70 to-white/5 drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] select-none mt-[8vh] md:mt-[12vh]"
         >
           BSSOC
         </motion.h1>
