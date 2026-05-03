@@ -11,13 +11,13 @@ export default function HeroBackground() {
   })
 
   // Increased layered depth and added scale for a 3D zoom effect when scrolling
-  const farY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
-  const midY = useTransform(scrollYProgress, [0, 1], ["0%", "70%"])
-  const nearY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"])
+  const farY = useTransform(scrollYProgress, [0, 1], ["0%", "130%"])
+  const midY = useTransform(scrollYProgress, [0, 1], ["0%", "90%"])
+  const nearY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
   
-  const farScale = useTransform(scrollYProgress, [0, 1], [1, 1.05])
-  const midScale = useTransform(scrollYProgress, [0, 1], [1, 1.1])
-  const nearScale = useTransform(scrollYProgress, [0, 1], [1, 1.2])
+  const farScale = useTransform(scrollYProgress, [0, 1], [1, 1.1])
+  const midScale = useTransform(scrollYProgress, [0, 1], [1, 1.15])
+  const nearScale = useTransform(scrollYProgress, [0, 1], [1, 1.25])
 
   return (
     <div ref={ref} className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-black">

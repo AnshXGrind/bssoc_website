@@ -48,7 +48,7 @@ export default function HeroContent() {
           initial={{ opacity: 0, scale: 0.9, y: 40 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[12vw] md:text-[15vw] font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/30 drop-shadow-[0_0_40px_rgba(255,255,255,0.2)] select-none"
+          className="text-[12vw] md:text-[15vw] font-black tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-[#d4d4d4] via-[#8a8a8a] to-[#333333] drop-shadow-[0_0_20px_rgba(255,255,255,0.1)] select-none"
         >
           BSSOC
         </motion.h1>

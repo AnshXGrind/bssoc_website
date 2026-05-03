@@ -13,7 +13,7 @@ export default function HeroForeground() {
   // Closest foreground moves naturally with the scroll to maintain floor
   // Adding scale for dynamic 3D zoom
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "0%"])
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.3])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.35])
 
   return (
     <div ref={ref} className="absolute inset-0 z-[50] pointer-events-none overflow-hidden">
