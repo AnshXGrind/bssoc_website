@@ -39,7 +39,7 @@ export default function HeroContent() {
   }, [mouseX, mouseY])
 
   return (
-    <div ref={containerRef} className="absolute inset-0 flex items-start justify-center w-full h-full pointer-events-none pt-[4vh] md:pt-[2vh]">
+    <div ref={containerRef} className="absolute inset-0 flex items-start justify-center w-full h-full pointer-events-none pt-[20vh] md:pt-[15vh]">
       <motion.div 
         style={{ y, opacity }}
         className="relative z-10 w-full flex flex-col items-center justify-start pointer-events-auto"

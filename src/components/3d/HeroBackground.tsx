@@ -10,10 +10,14 @@ export default function HeroBackground() {
     offset: ["start start", "end start"],
   })
 
-  // Increased layered depth to make mountains highly scrollable/move dynamically when mouse scrolling
-  const farY = useTransform(scrollYProgress, [0, 1], ["0%", "80%"])
-  const midY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-  const nearY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"])
+  // Increased layered depth and added scale for a 3D zoom effect when scrolling
+  const farY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+  const midY = useTransform(scrollYProgress, [0, 1], ["0%", "70%"])
+  const nearY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"])
+  
+  const farScale = useTransform(scrollYProgress, [0, 1], [1, 1.05])
+  const midScale = useTransform(scrollYProgress, [0, 1], [1, 1.1])
+  const nearScale = useTransform(scrollYProgress, [0, 1], [1, 1.2])
 
   return (
     <div ref={ref} className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-black">
@@ -23,7 +27,7 @@ export default function HeroBackground() {
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-white opacity-[0.012] blur-[120px] pointer-events-none" />
 
       {/* Far distant peaks */}
-      <motion.div style={{ y: farY }} className="absolute bottom-0 left-0 right-0 w-full opacity-85">
+      <motion.div style={{ y: farY, scale: farScale }} className="absolute bottom-0 left-0 right-0 w-full opacity-85 origin-bottom">
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[50vh] md:min-h-[70vh] mountain-drift-slow" preserveAspectRatio="none">
           <defs>
             <linearGradient id="far-grad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -39,7 +43,7 @@ export default function HeroBackground() {
       </motion.div>
 
       {/* Main majestic peak mimicking the photo */}
-      <motion.div style={{ y: midY }} className="absolute bottom-0 left-0 right-0 w-full z-10">
+      <motion.div style={{ y: midY, scale: midScale }} className="absolute bottom-0 left-0 right-0 w-full z-10 origin-bottom">
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[55vh] md:min-h-[75vh] mountain-drift-mid drop-shadow-[0_0_20px_rgba(255,255,255,0.05)]" preserveAspectRatio="none">
           <defs>
             <linearGradient id="mid-grad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -76,7 +80,7 @@ export default function HeroBackground() {
       </motion.div>
 
       {/* Near lower hills/ridges */}
-      <motion.div style={{ y: nearY }} className="absolute bottom-0 left-0 right-0 w-full z-20">
+      <motion.div style={{ y: nearY, scale: nearScale }} className="absolute bottom-0 left-0 right-0 w-full z-20 origin-bottom">
         <svg viewBox="0 0 1440 420" className="w-full h-auto min-h-[50vh] md:min-h-[65vh] mountain-drift-fast drop-shadow-xl" preserveAspectRatio="none">
           <defs>
             <linearGradient id="near-grad1" x1="0%" y1="0%" x2="0%" y2="100%">

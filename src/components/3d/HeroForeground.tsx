@@ -11,11 +11,13 @@ export default function HeroForeground() {
   })
 
   // Closest foreground moves naturally with the scroll to maintain floor
+  // Adding scale for dynamic 3D zoom
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "0%"])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.3])
 
   return (
     <div ref={ref} className="absolute inset-0 z-[50] pointer-events-none overflow-hidden">
-      <motion.div style={{ y }} className="absolute bottom-0 left-0 right-0 w-full flex flex-col items-center">
+      <motion.div style={{ y, scale }} className="absolute bottom-0 left-0 right-0 w-full flex flex-col items-center origin-bottom">
         <svg viewBox="0 0 1440 400" className="w-full h-auto min-h-[45vh] md:min-h-[65vh] object-cover object-bottom drop-shadow-2xl" preserveAspectRatio="none">
           {/* Transparent space above for text to peak through */}
           {/* Foreground Dark Layer */}
