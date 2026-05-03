@@ -9,7 +9,7 @@ const tracks = [
     title: "AI/ML",
     description: "Build applied machine learning systems.",
     icon: <Cpu className="w-12 h-12 text-accent" />,
-    color: "#94a3b8",
+    color: "#a3a3a3",
   },
   {
     id: "02",

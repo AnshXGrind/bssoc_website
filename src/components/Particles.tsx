@@ -46,7 +46,7 @@ export default function Particles() {
 
       <pointsMaterial
         size={0.04}
-        color="#94a3b8"
+        color="#a3a3a3"
         sizeAttenuation
         transparent
         opacity={0.9}

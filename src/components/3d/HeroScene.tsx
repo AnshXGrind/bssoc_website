@@ -37,9 +37,9 @@ export default function HeroScene() {
     <>
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
-      <directionalLight position={[-10, -10, -5]} intensity={0.5} color="#94a3b8" />
+      <directionalLight position={[-10, -10, -5]} intensity={0.5} color="#a3a3a3" />
       
-      <FloatingElement position={[-4, 2, -2]} rotation={[0.5, 0.5, 0]} color="#94a3b8">
+      <FloatingElement position={[-4, 2, -2]} rotation={[0.5, 0.5, 0]} color="#a3a3a3">
         <boxGeometry args={[1.5, 1.5, 1.5]} />
       </FloatingElement>
       
@@ -47,7 +47,7 @@ export default function HeroScene() {
         <coneGeometry args={[1, 2, 16]} />
       </FloatingElement>
       
-      <FloatingElement position={[0, -3, -5]} rotation={[0, 0, 0]} color="#94a3b8">
+      <FloatingElement position={[0, -3, -5]} rotation={[0, 0, 0]} color="#a3a3a3">
         <sphereGeometry args={[1.2, 16, 16]} />
       </FloatingElement>
       

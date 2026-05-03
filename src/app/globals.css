@@ -3,7 +3,7 @@
 @theme {
   --color-background: #000000;
   --color-foreground: #ffffff;
-  --color-accent: #94a3b8;
+  --color-accent: #a3a3a3;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

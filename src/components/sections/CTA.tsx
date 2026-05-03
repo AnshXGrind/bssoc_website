@@ -11,7 +11,7 @@ export default function CTA() {
   
   return (
     <section ref={containerRef} className="py-32 px-4 md:px-12 lg:px-24 bg-black relative z-10 overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent/10 via-black to-black" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-black to-black" />
       
       <div className="max-w-4xl mx-auto relative z-[100] text-center">
         <motion.div 
@@ -20,18 +20,18 @@ export default function CTA() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-block border border-accent/30 bg-accent/10 text-accent rounded-full px-4 py-1.5 text-sm font-mono tracking-widest uppercase mb-12">
+          <div className="inline-block border border-white/30 text-white rounded-full px-5 py-2 text-xs font-mono tracking-widest uppercase mb-12">
             Claim Your Spot
           </div>
           
           <h2 className="text-6xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter leading-none mb-12">
-            Apply <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-white">Now</span>
+            Apply <br/><span className="text-white/50">Now</span>
           </h2>
           <Magnetic strength={0.3}>
             <Link 
               href="/how-to-join"
               data-hover="true"
-              className="group relative inline-flex items-center justify-center px-12 py-6 font-bold text-white transition-all duration-300 ease-in-out bg-accent rounded-full hover:bg-[#ffffff] hover:text-[#0f172a] overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_60px_rgba(255,255,255,0.6)] cursor-pointer"
+              className="group relative inline-flex items-center justify-center px-12 py-6 font-bold text-black transition-all duration-300 ease-in-out bg-white rounded-full hover:bg-white/90 overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.3)] cursor-pointer"
               style={{ pointerEvents: 'auto' }}
             >
               <motion.span
@@ -43,7 +43,7 @@ export default function CTA() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
               </motion.span>
               <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black" />
-              <span className="absolute inset-0 w-full h-full rounded-full opacity-0 group-hover:opacity-100 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.4)_0%,_transparent_100%)] transition-opacity duration-300 pointer-events-none" />
+              <span className="absolute inset-0 w-full h-full rounded-full opacity-0 group-hover:opacity-100 bg-[radial-gradient(circle_at_center,_rgba(0,0,0,0.1)_0%,_transparent_100%)] transition-opacity duration-300 pointer-events-none" />
             </Link>
           </Magnetic>
         </motion.div>

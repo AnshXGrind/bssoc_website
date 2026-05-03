@@ -16,21 +16,21 @@ const roles = [
     desc: "Perfect for students and developers who want to dive into open source.",
     requirements: ["Basic Git knowledge", "Core language proficiency", "Passion for building"],
     benefits: ["Mentorship", "Project Certificate", "Exclusive Swag"],
-    href: `${process.env.NEXT_PUBLIC_TYPEFORM_URL || "https://form.typeform.com/to/GzKVGFkr"}?role=contributor`
+    href: `${process.env.NEXT_PUBLIC_TALLY_URL || "https://tally.so/r/A7WqlD"}?role=contributor`
   },
   {
     title: "Mentor",
     desc: "For experienced professionals who want to guide the next generation of builders.",
     requirements: ["3+ years experience", "Project maintainer experience", "Good communication"],
     benefits: ["Personal Branding", "Network Access", "Mentor Recognition"],
-    href: `${process.env.NEXT_PUBLIC_TYPEFORM_URL || "https://form.typeform.com/to/GzKVGFkr"}?role=mentor`
+    href: `${process.env.NEXT_PUBLIC_TALLY_URL || "https://tally.so/r/A7WqlD"}?role=mentor`
   },
   {
     title: "Project Admin",
     desc: "Oversee entire repositories and manage the contributor workflow.",
     requirements: ["Deep technical expertise", "Project lead experience", "Strong coordination skills"],
     benefits: ["Leadership Role", "Impact on Major Projects", "Premium Perks"],
-    href: `${process.env.NEXT_PUBLIC_TYPEFORM_URL || "https://form.typeform.com/to/GzKVGFkr"}?role=project-admin`
+    href: `${process.env.NEXT_PUBLIC_TALLY_URL || "https://tally.so/r/A7WqlD"}?role=project-admin`
   }
 ];
 

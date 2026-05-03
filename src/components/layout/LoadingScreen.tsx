@@ -49,7 +49,7 @@ export default function LoadingScreen() {
         <motion.div
           animate={isExiting ? { y: "-100%" } : { y: 0 }}
           transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#05080f] shadow-[0_20px_50px_rgba(0,0,0,0.5)] text-white origin-bottom"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black shadow-[0_20px_50px_rgba(0,0,0,0.5)] text-white origin-bottom"
         >
           <div className="relative w-full max-w-[900px] px-6 text-center">
             {words.map((word, idx) => {
@@ -58,7 +58,7 @@ export default function LoadingScreen() {
               
               // Last word "CODE" gets a special gradient
               const textClasses = word === "CODE" 
-                ? "text-transparent bg-clip-text bg-gradient-to-r from-white to-[#94a3b8]" 
+                ? "text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50" 
                 : "text-white";
 
               return (
